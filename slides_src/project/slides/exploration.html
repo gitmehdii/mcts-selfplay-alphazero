@@ -1,0 +1,44 @@
+<section id="exploration" class="co">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s6-holes" width="96" height="96" patternUnits="userSpaceOnUse"><circle cx="48" cy="48" r="30" fill="none" stroke="#111318" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s6-holes)" opacity="0.05"/>
+</svg>
+<div class="crumb"><p class="t"><b>06.</b> MCTS pur · exploration</p><div class="prog"><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q c"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div></div></div>
+<h2>Explorer trop peu coûte cher</h2>
+<div class="in" style="--i:0; margin-top:36px; background:#111318; border-radius:22px; padding:28px 44px; display:flex; align-items:center; gap:36px;">
+<p class="m" style="font-size:150px; font-weight:700; line-height:1; letter-spacing:-0.05em; color:#D93829; white-space:nowrap;">5%</p>
+<p style="width:520px; font-size:30px; color:#F4F1EA;"><b>sans exploration</b> (c = 0) : l’agent s’enferme sur le premier coup qui semble bon.</p>
+<div style="width:2px; height:120px; background:#2E3340;"></div>
+<p class="m" style="font-size:80px; font-weight:700; line-height:1; letter-spacing:-0.04em; color:#F4F1EA; white-space:nowrap;">≈50%</p>
+<p style="flex:1; font-size:28px; color:#A7ABB3;">pour tout c entre 1 et 5 : aucune différence nette avec √2.</p>
+</div>
+<div class="chart fadein" style="--i:1; width:1664px; height:420px; margin-top:28px;">
+<svg aria-label="Score du MCTS selon la constante d’exploration c : 5 % à c = 0, puis un plateau autour de 50 % entre 1 et 5" width="1560" height="330" viewBox="0 0 1560 330" style="position:absolute; left:90px; top:6px;">
+<defs><linearGradient id="s6-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D93829" stop-opacity="0.16"/><stop offset="1" stop-color="#D93829" stop-opacity="0"/></linearGradient></defs>
+<rect x="318" y="10" width="1232" height="310" fill="#111318" opacity="0.045"/>
+<g stroke="#D3CCBE" stroke-width="1.5"><line x1="0" y1="10" x2="1560" y2="10"/><line x1="0" y1="87.5" x2="1560" y2="87.5"/><line x1="0" y1="242.5" x2="1560" y2="242.5"/><line x1="0" y1="320" x2="1560" y2="320"/></g>
+<line x1="0" y1="165" x2="1560" y2="165" stroke="#9C9384" stroke-width="2" stroke-dasharray="8 8"/>
+<line x1="445.5" y1="10" x2="445.5" y2="320" stroke="#4A4E57" stroke-width="2" stroke-dasharray="3 7"/>
+<polygon fill="url(#s6-a)" points="10,304.5 40.8,290.55 87,244.8 164,206.1 318,158.8 445.5,178.95 626,166.55 934,175.1 1550,178.95 1550,320 10,320"/>
+<polyline fill="none" stroke="#D93829" stroke-width="6" stroke-linejoin="round" points="10,304.5 40.8,290.55 87,244.8 164,206.1 318,158.8 445.5,178.95 626,166.55 934,175.1 1550,178.95"/>
+<g fill="#F4F1EA" stroke="#D93829" stroke-width="4"><circle cx="40.8" cy="290.55" r="8"/><circle cx="87" cy="244.8" r="8"/><circle cx="164" cy="206.1" r="8"/><circle cx="318" cy="158.8" r="8"/><circle cx="626" cy="166.55" r="8"/><circle cx="934" cy="175.1" r="8"/><circle cx="1550" cy="178.95" r="8"/></g>
+<circle cx="445.5" cy="178.95" r="10" fill="#111318"/>
+<circle cx="10" cy="304.5" r="10" fill="#D93829"/>
+</svg>
+<p class="ax" style="left:0; top:0; width:76px; text-align:right;">100%</p>
+<p class="ax" style="left:0; top:155px; width:76px; text-align:right;">50%</p>
+<p class="ax" style="left:0; top:310px; width:76px; text-align:right;">0%</p>
+<p class="ax" style="left:70px; top:342px; width:60px; text-align:center;">0</p>
+<p class="ax" style="left:378px; top:342px; width:60px; text-align:center;">1</p>
+<p class="ax" style="left:686px; top:342px; width:60px; text-align:center;">2</p>
+<p class="ax" style="left:994px; top:342px; width:60px; text-align:center;">3</p>
+<p class="ax" style="left:1302px; top:342px; width:60px; text-align:center;">4</p>
+<p class="ax" style="left:1594px; top:342px; width:70px; text-align:right;">5</p>
+<p class="ax" style="left:1064px; top:378px; width:600px; text-align:right;">constante d’exploration c</p>
+<p class="lab ink" style="left:790px; top:30px; width:520px;">zone sûre : c entre 1 et 5</p>
+<p class="lab ink" style="left:548px; top:276px; width:300px;">√2 · la référence</p>
+<p class="lab red" style="left:150px; top:286px; width:280px;">← c = 0 : 5%</p>
+</div>
+<p class="foot">300 simulations · 200 parties par point · contre MCTS(c = √2)</p>
+<aside>≈ 1 min. Deuxième résultat : la constante d’exploration c de la formule UCB1. On fait jouer un MCTS avec différentes valeurs de c contre un MCTS de référence à racine de 2. Le bandeau dit l’essentiel : avec c = 0, donc aucune exploration, l’agent ne marque que 5 % : il s’enferme sur le premier coup qui a l’air bon. Puis, sur le graphique, un large plateau entre 1 et 5 où tout se vaut statistiquement. Morale : le réglage n’est pas critique tant qu’on explore assez ; sous-explorer est bien plus grave que sur-explorer.</aside>
+</section>

@@ -1,0 +1,35 @@
+Jeu chess:mini | réseau 64x5 (4.60 M paramètres) | cuda
+[it   1] 192 parties (349s, long. moy. 95.3, J1 32% / J2 38% / nul 30%) | buffer 18306 | L_pi 3.526 L_v 0.280 H 3.62 (15s)
+[it   2] 192 parties (213s, long. moy. 97.6, J1 32% / J2 32% / nul 36%) | buffer 37039 | L_pi 2.748 L_v 0.195 H 2.72 (6s)
+    éval : AZ(iter_003,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 4V / 3N / 25D sur 32 parties | score 17.2% [IC95 7.9%-33.5%] | Elo -273 | 88.6s
+[it   3] 192 parties (222s, long. moy. 94.7, J1 30% / J2 32% / nul 38%) | buffer 55213 | L_pi 2.543 L_v 0.195 H 2.53 (6s) | score éval 0.1719
+[it   4] 192 parties (224s, long. moy. 97.4, J1 33% / J2 41% / nul 27%) | buffer 73912 | L_pi 2.429 L_v 0.206 H 2.42 (10s)
+[it   5] 192 parties (212s, long. moy. 95.6, J1 39% / J2 28% / nul 33%) | buffer 92259 | L_pi 2.357 L_v 0.207 H 2.35 (7s)
+    éval : AZ(iter_006,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 5V / 8N / 19D sur 32 parties | score 28.1% [IC95 15.6%-45.4%] | Elo -163 | 73.4s
+[it   6] 192 parties (215s, long. moy. 94.7, J1 31% / J2 35% / nul 34%) | buffer 110450 | L_pi 2.309 L_v 0.211 H 2.30 (7s) | score éval 0.2812
+[it   7] 192 parties (234s, long. moy. 98.0, J1 33% / J2 31% / nul 36%) | buffer 129258 | L_pi 2.277 L_v 0.219 H 2.27 (9s)
+[it   8] 192 parties (223s, long. moy. 95.8, J1 31% / J2 41% / nul 28%) | buffer 147653 | L_pi 2.244 L_v 0.224 H 2.24 (11s)
+    éval : AZ(iter_009,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 7V / 7N / 18D sur 32 parties | score 32.8% [IC95 19.2%-50.1%] | Elo -124 | 85.6s
+[it   9] 192 parties (225s, long. moy. 97.5, J1 28% / J2 34% / nul 38%) | buffer 150000 | L_pi 2.121 L_v 0.228 H 2.12 (11s) | score éval 0.3281
+[it  10] 192 parties (236s, long. moy. 98.1, J1 30% / J2 33% / nul 37%) | buffer 150000 | L_pi 2.081 L_v 0.230 H 2.08 (8s)
+[it  11] 192 parties (239s, long. moy. 98.5, J1 35% / J2 35% / nul 30%) | buffer 150000 | L_pi 2.060 L_v 0.230 H 2.06 (9s)
+    éval : AZ(iter_012,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 15V / 4N / 13D sur 32 parties | score 53.1% [IC95 36.4%-69.1%] | Elo +22 | 71.3s
+[it  12] 192 parties (357s, long. moy. 97.1, J1 34% / J2 32% / nul 34%) | buffer 150000 | L_pi 2.041 L_v 0.225 H 2.04 (9s) | score éval 0.5312
+[it  13] 192 parties (222s, long. moy. 98.0, J1 33% / J2 33% / nul 34%) | buffer 150000 | L_pi 2.031 L_v 0.219 H 2.03 (9s)
+[it  14] 192 parties (222s, long. moy. 97.4, J1 36% / J2 32% / nul 32%) | buffer 150000 | L_pi 2.028 L_v 0.215 H 2.02 (7s)
+    éval : AZ(iter_015,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 13V / 7N / 12D sur 32 parties | score 51.6% [IC95 35.0%-67.8%] | Elo +11 | 72.5s
+[it  15] 192 parties (218s, long. moy. 97.7, J1 30% / J2 33% / nul 37%) | buffer 150000 | L_pi 2.023 L_v 0.209 H 2.02 (8s) | score éval 0.5156
+[it  16] 192 parties (227s, long. moy. 97.4, J1 31% / J2 29% / nul 41%) | buffer 150000 | L_pi 2.026 L_v 0.207 H 2.02 (10s)
+[it  17] 192 parties (218s, long. moy. 96.8, J1 35% / J2 28% / nul 36%) | buffer 150000 | L_pi 2.022 L_v 0.206 H 2.02 (7s)
+    éval : AZ(iter_018,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 12V / 10N / 10D sur 32 parties | score 53.1% [IC95 36.4%-69.1%] | Elo +22 | 72.8s
+[it  18] 192 parties (225s, long. moy. 98.9, J1 35% / J2 36% / nul 29%) | buffer 150000 | L_pi 2.020 L_v 0.208 H 2.02 (6s) | score éval 0.5312
+[it  19] 192 parties (213s, long. moy. 96.3, J1 35% / J2 30% / nul 35%) | buffer 150000 | L_pi 2.019 L_v 0.205 H 2.02 (7s)
+[it  20] 192 parties (210s, long. moy. 98.0, J1 35% / J2 31% / nul 33%) | buffer 150000 | L_pi 2.016 L_v 0.205 H 2.01 (9s)
+    éval : AZ(iter_021,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 19V / 6N / 7D sur 32 parties | score 68.8% [IC95 51.4%-82.0%] | Elo +137 | 53.7s
+[it  21] 192 parties (200s, long. moy. 97.1, J1 32% / J2 40% / nul 28%) | buffer 150000 | L_pi 2.012 L_v 0.208 H 2.01 (5s) | score éval 0.6875
+[it  22] 192 parties (182s, long. moy. 97.2, J1 30% / J2 38% / nul 32%) | buffer 150000 | L_pi 2.010 L_v 0.204 H 2.01 (5s)
+[it  23] 192 parties (184s, long. moy. 96.8, J1 31% / J2 31% / nul 38%) | buffer 150000 | L_pi 2.014 L_v 0.198 H 2.01 (5s)
+    éval : AZ(iter_024,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 17V / 6N / 9D sur 32 parties | score 62.5% [IC95 45.3%-77.1%] | Elo +89 | 53.7s
+[it  24] 192 parties (183s, long. moy. 98.3, J1 28% / J2 34% / nul 38%) | buffer 150000 | L_pi 2.013 L_v 0.193 H 2.01 (5s) | score éval 0.625
+Budget de temps atteint.
+Terminé. Checkpoints dans runs/chess_mini

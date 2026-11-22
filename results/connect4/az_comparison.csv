@@ -1,0 +1,9 @@
+duel,agent_a,agent_b,wins,draws,losses,score,ci_low,ci_high,elo
+AZ vs aléatoire,"AZ(latest,sims=100)",Random,100,0,0,1.0,0.963,1.0,1200
+"AZ vs MCTS pur, mêmes simulations","AZ(latest,sims=100)","MCTS(sims=100,c=1.41421,random)",96,2,2,0.97,0.915,0.99,604
+"AZ vs MCTS pur, 5x plus de simulations","AZ(latest,sims=100)","MCTS(sims=500,c=1.41421,random)",78,4,18,0.8,0.711,0.867,241
+"AZ vs MCTS pur, 10x plus de simulations","AZ(latest,sims=100)","MCTS(sims=1000,c=1.41421,random)",83,2,15,0.84,0.756,0.899,288
+Réseau seul (0 sim) vs aléatoire,Net(latest),Random,100,0,0,1.0,0.963,1.0,1200
+Réseau seul (0 sim) vs MCTS pur,Net(latest),"MCTS(sims=100,c=1.41421,random)",84,1,15,0.845,0.761,0.903,295
+Réseau NON entraîné + PUCT vs MCTS pur,"AZ(iter_000,sims=100)","MCTS(sims=100,c=1.41421,random)",8,2,90,0.09,0.048,0.162,-402
+AZ entraîné vs réseau NON entraîné,"AZ(latest,sims=100)","AZ(iter_000,sims=100)",100,0,0,1.0,0.963,1.0,1200

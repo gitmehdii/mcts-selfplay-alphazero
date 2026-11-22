@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Échecs contre l’IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap">
+<style>
+  :root {
+    --navy: #13203A; --navy-2: #1C2D4F; --navy-3: #26385E; --hole: #0D172B;
+    --paper: #F6F4EF; --mist: #B9C4D6; --muted: #8C99B0;
+    --amber: #F0B04A; --blue: #4F8BEA;
+    --light: #EEDDBB; --dark: #B48A62;
+    --sq: min(76px, calc((100vw - 48px) / 8));
+    --head: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--mist); font: 17px/1.45 Inter, 'Segoe UI', Arial, sans-serif; min-height: 100vh; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 24px 16px 48px; }
+  nav { display: flex; gap: 8px; margin-bottom: 24px; }
+  nav a { font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--mist); text-decoration: none; padding: 8px 14px; border-radius: 10px; box-shadow: inset 0 0 0 2px #2C3F66; }
+  nav a[aria-current="page"] { background: var(--amber); color: var(--navy); box-shadow: none; }
+  header { margin-bottom: 24px; }
+  .eyebrow { font-family: var(--head); font-size: 14px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--amber); margin: 0 0 8px; }
+  h1 { font-family: var(--head); color: var(--paper); font-size: clamp(30px, 4vw, 48px); line-height: 1.05; margin: 0 0 10px; letter-spacing: -.02em; }
+  .sub { margin: 0; max-width: 780px; font-size: 18px; }
+  main { display: grid; grid-template-columns: auto minmax(320px, 1fr); gap: 40px; align-items: start; }
+  @media (max-width: 1040px) { main { grid-template-columns: 1fr; } .play { justify-self: center; } }
+
+  .play { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .status { font-family: var(--head); font-size: 24px; font-weight: 700; color: var(--paper); min-height: 34px; text-align: center; display: flex; align-items: center; gap: 12px; }
+  .status .dot { width: 18px; height: 18px; border-radius: 50%; flex: none; box-shadow: 0 0 0 2px var(--muted); }
+  .status.err { color: #FF9C8A; }
+  .board { display: grid; grid-template-columns: repeat(8, var(--sq)); grid-template-rows: repeat(8, var(--sq)); border-radius: 10px; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.35), 0 0 0 10px var(--navy-3); }
+  .sq { all: unset; position: relative; width: var(--sq); height: var(--sq); display: grid; place-items: center; cursor: default; }
+  .sq.l { background: var(--light); } .sq.d { background: var(--dark); }
+  .sq.pick { cursor: pointer; }
+  .sq:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; z-index: 2; }
+  .sq.last::before { content: ""; position: absolute; inset: 0; background: rgba(240,176,74,.45); }
+  .sq.sel::before { content: ""; position: absolute; inset: 0; background: rgba(79,139,234,.55); }
+  .sq.check::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle, rgba(226,72,52,.95) 0%, rgba(226,72,52,.5) 45%, rgba(226,72,52,0) 75%); }
+  .sq.target { cursor: pointer; }
+  .sq.target::after { content: ""; position: absolute; width: 30%; height: 30%; border-radius: 50%; background: rgba(19,32,58,.35); }
+  .sq.target.cap::after { width: 86%; height: 86%; background: none; box-shadow: inset 0 0 0 6px rgba(19,32,58,.35); }
+  .pc { position: relative; z-index: 1; font-size: calc(var(--sq) * .78); line-height: 1; font-family: 'Segoe UI Symbol', 'DejaVu Sans', 'Noto Sans Symbols 2', 'Arial Unicode MS', serif; user-select: none; }
+  .pc.w { color: #FBFAF6; -webkit-text-stroke: 1.6px #1A1D24; text-shadow: 0 2px 2px rgba(0,0,0,.25); }
+  .pc.b { color: #1A1D24; -webkit-text-stroke: 1px #1A1D24; text-shadow: 0 2px 2px rgba(0,0,0,.2); }
+  .pc.moved { animation: land .28s ease-out both; }
+  @keyframes land { from { transform: scale(1.25); opacity: .3; } to { transform: scale(1); opacity: 1; } }
+  .coord { position: absolute; font: 700 12px var(--head); z-index: 1; }
+  .coord.f { right: 4px; bottom: 2px; } .coord.r { left: 4px; top: 2px; }
+  .sq.l .coord { color: var(--dark); } .sq.d .coord { color: var(--light); }
+  .ply { width: calc(var(--sq) * 8); }
+  .ply-bar { height: 10px; border-radius: 5px; background: var(--hole); overflow: hidden; }
+  .ply-bar div { height: 100%; width: 0; background: var(--amber); transition: width .3s; }
+  .ply-txt { display: flex; justify-content: space-between; font-size: 14px; margin-top: 6px; }
+  .ply-txt b { color: var(--paper); }
+  @media (prefers-reduced-motion: reduce) { .pc.moved { animation: none; } }
+
+  .side { display: flex; flex-direction: column; gap: 18px; }
+  .card { background: var(--navy-2); border: 1px solid #2C3F66; border-radius: 18px; padding: 20px 22px; }
+  .card h2 { font-family: var(--head); color: var(--paper); font-size: 19px; margin: 0 0 12px; }
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; background: var(--hole); padding: 5px; border-radius: 12px; }
+  .seg.two { grid-template-columns: 1fr 1fr; }
+  .seg button { all: unset; text-align: center; padding: 9px 6px; border-radius: 9px; font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--mist); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--amber); color: var(--navy); }
+  .seg button:disabled { opacity: .35; cursor: not-allowed; }
+  .seg button:focus-visible, .btn:focus-visible { outline: 3px solid var(--paper); outline-offset: 2px; }
+  .desc { margin: 12px 0 0; font-size: 15px; min-height: 44px; }
+  .row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .btn { all: unset; cursor: pointer; padding: 11px 16px; border-radius: 11px; font-family: var(--head); font-weight: 700; font-size: 15px; background: var(--paper); color: var(--navy); }
+  .btn.ghostbtn { background: transparent; color: var(--paper); box-shadow: inset 0 0 0 2px #3A507C; }
+  .btn.ghostbtn[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--amber); color: var(--amber); }
+  .label { font-size: 14px; color: var(--muted); margin: 14px 0 6px; }
+
+  .think-meta { font-size: 15px; margin: -4px 0 12px; min-height: 22px; }
+  .bars { display: flex; flex-direction: column; gap: 7px; }
+  .bar { display: grid; grid-template-columns: 64px 1fr 96px; align-items: center; gap: 10px; font-size: 15px; }
+  .bar .n { font-family: var(--head); font-weight: 700; color: var(--paper); }
+  .track { position: relative; height: 18px; background: var(--hole); border-radius: 6px; overflow: hidden; }
+  .fill { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--paper); border-radius: 6px; transition: width .35s ease; }
+  .fill.best { background: var(--amber); }
+  .prior { position: absolute; top: 0; bottom: 0; width: 4px; margin-left: -2px; background: var(--blue); border-radius: 2px; }
+  .bar .v { text-align: right; font-variant-numeric: tabular-nums; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 14px; color: var(--muted); }
+  .legend i { display: inline-block; width: 14px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+
+  .gauge { height: 22px; border-radius: 11px; background: #1A1D24; overflow: hidden; position: relative; box-shadow: inset 0 0 0 2px #3A507C; }
+  .gauge .g { position: absolute; inset: 0 auto 0 0; width: 50%; background: #FBFAF6; transition: width .5s ease; }
+  .gauge .mid { position: absolute; left: 50%; top: -3px; bottom: -3px; width: 2px; background: var(--amber); }
+  .gauge-txt { display: flex; justify-content: space-between; font-size: 14px; margin-top: 8px; }
+  .gauge-txt b { color: var(--paper); }
+  .moves { font-size: 15px; max-height: 132px; overflow-y: auto; font-variant-numeric: tabular-nums; display: grid; grid-template-columns: 36px 1fr 1fr; gap: 2px 8px; }
+  .moves .num { color: var(--muted); }
+  .moves span:not(.num) { color: var(--paper); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+  th { text-align: left; color: var(--muted); font-weight: 600; padding: 4px 0; }
+  td { padding: 6px 0; border-top: 1px solid #2C3F66; }
+  td:not(:first-child), th:not(:first-child) { text-align: center; padding-left: 12px; }
+  td b { color: var(--paper); }
+  .tiny { all: unset; cursor: pointer; font-size: 13px; color: var(--muted); text-decoration: underline; margin-top: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Jeux"><a href="/">Puissance 4</a><a href="/echecs" aria-current="page">Échecs</a></nav>
+  <header>
+    <p class="eyebrow">Projet EPITA · MCTS &amp; self-play</p>
+    <h1 id="title">Affrontez l’IA aux échecs (version mini)</h1>
+    <p class="sub" id="subtitle">Roi, fou, cavalier, tour et 4 pions de chaque côté. L’IA a appris seule, en 4&#8239;608 parties contre elle-même. Après 100 demi-coups, la partie est arbitrée au matériel : celui qui a 3 points d’avance gagne.</p>
+  </header>
+
+  <main>
+    <section class="play" aria-label="Échiquier">
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+      <div class="board" id="board"></div>
+      <div class="ply">
+        <div class="ply-bar"><div id="ply-fill"></div></div>
+        <div class="ply-txt"><span id="ply-txt">Demi-coup 0 / 100</span><span id="mat-txt">Matériel égal</span></div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="card">
+        <h2>Variante</h2>
+        <div class="seg two" role="group" aria-label="Variante" style="margin-bottom:18px;">
+          <button id="var-mini" aria-pressed="true">Mini (aile roi)</button>
+          <button id="var-std" aria-pressed="false">Échecs complets</button>
+        </div>
+        <h2>Votre adversaire</h2>
+        <div class="seg" id="levels" role="group" aria-label="Niveau de l’IA"></div>
+        <p class="desc" id="level-desc"></p>
+        <p class="label">Votre couleur (les Blancs commencent)</p>
+        <div class="seg two" role="group" aria-label="Votre couleur">
+          <button id="side-w" aria-pressed="true">Blancs</button>
+          <button id="side-b" aria-pressed="false">Noirs</button>
+        </div>
+        <div class="row">
+          <button class="btn" id="new">Nouvelle partie</button>
+          <button class="btn ghostbtn" id="spectate" aria-pressed="false">Mode spectateur</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Ce que l’IA a pensé</h2>
+        <p class="think-meta" id="think-meta">Elle réfléchira à son premier coup.</p>
+        <div class="bars" id="bars"></div>
+        <div class="legend">
+          <span><i style="background:var(--amber)"></i>coup choisi</span>
+          <span><i style="background:var(--paper)"></i>part de la recherche</span>
+          <span id="leg-prior"><i style="background:var(--blue)"></i>intuition du réseau</span>
+        </div>
+        <p class="legend" id="leg-nums" style="margin-top:6px;"></p>
+      </div>
+
+      <div class="card" id="gauge-card">
+        <h2>Qui gagne, selon le réseau ?</h2>
+        <div class="gauge" aria-hidden="true"><div class="g" id="gauge"></div><div class="mid"></div></div>
+        <div class="gauge-txt"><span>Blancs</span><span id="gauge-txt">Position équilibrée</span><span>Noirs</span></div>
+      </div>
+
+      <div class="card">
+        <h2>Coups joués</h2>
+        <div class="moves" id="moves"></div>
+      </div>
+
+      <div class="card">
+        <h2>Tableau du stand</h2>
+        <table id="score"></table>
+        <button class="tiny" id="reset-score">Remettre à zéro</button>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<script>
+const GLYPH = { k: "♚", q: "♛", r: "♜", b: "♝", n: "♞", p: "♟" };
+const FILES = "abcdefgh";
+const SIDE = { w: "Blancs", b: "Noirs" };
+const S = { variant: "mini", moves: [], state: null, level: "expert", human: "w", sel: null, busy: false, spectator: false,
+            specGames: 0, specOrder: null, gen: 0, levels: {}, justMoved: null };
+const $ = (id) => document.getElementById(id);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const sqName = (i) => FILES[i % 8] + (Math.floor(i / 8) + 1);
+const sqIndex = (n) => FILES.indexOf(n[0]) + 8 * (Number(n[1]) - 1);
+// notation algébrique française : R(oi), D(ame), T(our), F(ou), C(avalier)
+const FR = { K: "R", Q: "D", R: "T", B: "F", N: "C" };
+const fr = (san) => san.replace(/^[KQRBN]/, (m) => FR[m]).replace(/=Q/, "=D");
+
+// ------------------------------------------------------------ scores
+const SCORE_KEY = "echecs-stand-scores-v2";
+function loadScores() { try { return JSON.parse(localStorage.getItem(SCORE_KEY)) || {}; } catch { return {}; } }
+function saveScores(s) { try { localStorage.setItem(SCORE_KEY, JSON.stringify(s)); } catch {} }
+let SCORES = loadScores();
+function bump(key, field) { key = S.variant + ":" + key; SCORES[key] = SCORES[key] || { humain: 0, ia: 0, nul: 0 }; SCORES[key][field]++; saveScores(SCORES); renderScores(); }
+function renderScores() {
+  const rows = [`<tr><th>Niveau</th><th>Visiteurs</th><th>IA</th><th>Nuls</th></tr>`];
+  for (const [k, lv] of Object.entries(S.levels)) {
+    const s = SCORES[S.variant + ":" + k] || { humain: 0, ia: 0, nul: 0 };
+    rows.push(`<tr><td>${lv.label}</td><td><b>${s.humain}</b></td><td><b>${s.ia}</b></td><td>${s.nul}</td></tr>`);
+  }
+  const sp = SCORES[S.variant + ":spectateur"] || { humain: 0, ia: 0, nul: 0 };
+  rows.push(`<tr><td>Spectateur : AlphaZero vs MCTS pur</td><td colspan="3"><b>${sp.ia}</b> – <b>${sp.humain}</b> · ${sp.nul} nul${sp.nul > 1 ? "s" : ""}</td></tr>`);
+  $("score").innerHTML = rows.join("");
+}
+$("reset-score").onclick = () => { if (confirm("Remettre le tableau du stand à zéro ?")) { SCORES = {}; saveScores(SCORES); renderScores(); } };
+
+async function api(path, body) {
+  const r = await fetch(path, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : {});
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || r.status);
+  return j;
+}
+
+// ------------------------------------------------------------ échiquier
+function parseFen(fen) {
+  const out = Array(64).fill(null);
+  fen.split(" ")[0].split("/").forEach((row, i) => {
+    let f = 0; const rank = 7 - i;
+    for (const ch of row) {
+      if (/\d/.test(ch)) f += Number(ch);
+      else { out[rank * 8 + f] = { c: ch === ch.toUpperCase() ? "w" : "b", t: ch.toLowerCase() }; f++; }
+    }
+  });
+  return out;
+}
+const humanTurn = () => !S.spectator && !S.busy && S.state && !S.state.over && S.state.turn === S.human;
+function targetsFrom(from) {
+  if (from === null) return [];
+  const n = sqName(from);
+  return S.state.legal.filter((u) => u.startsWith(n)).map((u) => sqIndex(u.slice(2, 4)));
+}
+function renderBoard() {
+  const st = S.state, pos = parseFen(st.fen), board = $("board");
+  const flip = S.spectator ? false : S.human === "b";
+  const targets = targetsFrom(S.sel);
+  const last = st.last ? [sqIndex(st.last.slice(0, 2)), sqIndex(st.last.slice(2, 4))] : [];
+  board.innerHTML = "";
+  for (let vr = 0; vr < 8; vr++) for (let vf = 0; vf < 8; vf++) {
+    const rank = flip ? vr : 7 - vr, file = flip ? 7 - vf : vf, i = rank * 8 + file;
+    const b = document.createElement("button");
+    const p = pos[i];
+    b.className = "sq " + ((rank + file) % 2 ? "l" : "d");
+    if (last.includes(i)) b.classList.add("last");
+    if (S.sel === i) b.classList.add("sel");
+    if (st.check && st.king === sqName(i)) b.classList.add("check");
+    if (targets.includes(i)) b.classList.add("target", ...(p ? ["cap"] : []));
+    if (humanTurn() && p && p.c === S.human) b.classList.add("pick");
+    b.setAttribute("aria-label", sqName(i) + (p ? ` ${p.c === "w" ? "blanc" : "noir"} ${p.t}` : ""));
+    if (p) {
+      const s = document.createElement("span");
+      s.className = `pc ${p.c}` + (S.justMoved === i ? " moved" : "");
+      s.textContent = GLYPH[p.t] + "︎";
+      b.appendChild(s);
+    }
+    if (vr === 7) { const c = document.createElement("span"); c.className = "coord f"; c.textContent = FILES[file]; b.appendChild(c); }
+    if (vf === 0) { const c = document.createElement("span"); c.className = "coord r"; c.textContent = rank + 1; b.appendChild(c); }
+    b.onclick = () => clickSquare(i, pos);
+    board.appendChild(b);
+  }
+}
+function clickSquare(i, pos) {
+  if (!humanTurn()) return;
+  if (S.sel !== null && targetsFrom(S.sel).includes(i)) {
+    const prefix = sqName(S.sel) + sqName(i);
+    const uci = S.state.legal.find((u) => u.startsWith(prefix));
+    S.sel = null; humanMove(uci); return;
+  }
+  S.sel = pos[i] && pos[i].c === S.human ? (S.sel === i ? null : i) : null;
+  renderBoard();
+}
+
+// ------------------------------------------------------------ affichage
+function setStatus(text, side = null, err = false) {
+  const st = $("status");
+  st.className = "status" + (err ? " err" : "");
+  st.innerHTML = (side ? `<span class="dot" style="background:${side === "w" ? "#FBFAF6" : "#1A1D24"}"></span>` : "") + text;
+}
+function renderInfo() {
+  const st = S.state;
+  $("ply-fill").style.width = (100 * st.ply / st.max_plies) + "%";
+  $("ply-txt").innerHTML = `Demi-coup <b>${st.ply}</b> / ${st.max_plies}`;
+  const m = st.material;
+  $("mat-txt").innerHTML = m === 0 ? "Matériel égal" : `Matériel : <b>${m > 0 ? "Blancs" : "Noirs"} +${Math.abs(m)}</b>`;
+  const cells = [];
+  for (let k = 0; k < st.san.length; k += 2) cells.push(`<span class="num">${k / 2 + 1}.</span><span>${fr(st.san[k])}</span><span>${st.san[k + 1] ? fr(st.san[k + 1]) : ""}</span>`);
+  $("moves").innerHTML = cells.join("") || `<span class="num"></span><span style="grid-column: span 2; color: var(--muted)">Aucun coup pour l’instant</span>`;
+  $("moves").scrollTop = 1e6;
+  setGauge(st.v_white);
+}
+function setGauge(v) {
+  if (v === null || v === undefined) { $("gauge-card").style.display = "none"; return; }
+  $("gauge-card").style.display = "";
+  const pct = Math.round((v + 1) * 50);
+  $("gauge").style.width = pct + "%";
+  $("gauge-txt").innerHTML = Math.abs(pct - 50) < 8 ? "Position équilibrée"
+    : pct > 50 ? `Avantage <b>Blancs</b> (${pct} %)` : `Avantage <b>Noirs</b> (${100 - pct} %)`;
+}
+function renderThinking(res) {
+  const lv = S.levels[res.level];
+  $("think-meta").textContent = res.sims
+    ? `${lv.label} : ${res.sims.toLocaleString("fr-FR")} simulations en ${res.think_ms.toLocaleString("fr-FR")} ms parmi ${res.n_legal} coups possibles, puis ${fr(res.san_move)}.`
+    : `${lv.label} : aucune simulation, ${fr(res.san_move)} joué à l’intuition en ${res.think_ms} ms (${res.n_legal} coups possibles).`;
+  const hasPrior = res.candidates.some((c) => c.prior !== null);
+  $("leg-prior").style.display = hasPrior ? "" : "none";
+  $("leg-nums").textContent = res.sims ? "Les 6 coups les plus explorés · simulations · chances estimées par l’IA"
+                                       : "Les 6 coups préférés du réseau · probabilité qu’il leur donne";
+  const total = res.sims || 1;
+  $("bars").innerHTML = res.candidates.map((c) => {
+    const share = c.visits !== null ? c.visits / total : c.prior;
+    const v = c.visits !== null ? (c.q === null ? `${c.visits}` : `${c.visits} · ${Math.round((c.q + 1) * 50)} %`) : `${Math.round(c.prior * 100)} %`;
+    const prior = c.prior !== null && c.visits !== null ? `<div class="prior" style="left:${(c.prior * 100).toFixed(1)}%"></div>` : "";
+    return `<div class="bar"><span class="n">${fr(c.san)}</span><div class="track"><div class="fill${c.uci === res.move ? " best" : ""}" style="width:${(share * 100).toFixed(1)}%"></div>${prior}</div><span class="v">${v}</span></div>`;
+  }).join("");
+}
+function emptyThinking() {
+  $("bars").innerHTML = ""; $("think-meta").textContent = "Elle réfléchira à son premier coup."; $("leg-nums").textContent = "";
+}
+
+// ------------------------------------------------------------ déroulement
+function applyState(st, movedUci) {
+  S.state = st; S.justMoved = movedUci ? sqIndex(movedUci.slice(2, 4)) : null;
+  renderBoard(); renderInfo();
+  if (st.over) finish(); else turnStatus();
+}
+function turnStatus() {
+  if (S.spectator || S.busy) return;
+  if (S.state.turn === S.human) setStatus(`À vous de jouer (${SIDE[S.human].toLowerCase()})${S.state.check ? " : échec !" : ""}`, S.human);
+}
+async function humanMove(uci) {
+  const gen = S.gen; S.busy = true;
+  try {
+    const st = await api("/api/chess/state", { variant: S.variant, moves: [...S.moves, uci] });
+    if (gen !== S.gen) return;
+    S.moves.push(uci); S.busy = false; applyState(st, uci);
+    if (!st.over) await aiTurn(S.level);
+  } catch (e) { if (gen === S.gen) { S.busy = false; setStatus("Serveur injoignable : lancez « python demo/server.py »", null, true); } }
+}
+async function aiTurn(level) {
+  const gen = S.gen; S.busy = true; renderBoard();
+  const side = S.state.turn;
+  setStatus(S.spectator ? `${S.levels[level].label} (${SIDE[side].toLowerCase()}) réfléchit…` : "L’IA réfléchit…", side);
+  const t0 = performance.now();
+  try {
+    const res = await api("/api/chess/move", { variant: S.variant, moves: S.moves, level });
+    await sleep(Math.max(0, (S.spectator ? 800 : 400) - (performance.now() - t0)));
+    if (gen !== S.gen) return false;
+    S.moves.push(res.move); S.busy = false;
+    renderThinking(res); applyState(res.state, res.move);
+    return true;
+  } catch (e) {
+    if (gen === S.gen) { S.busy = false; setStatus("Serveur injoignable : lancez « python demo/server.py »", null, true); }
+    return false;
+  }
+}
+function finish() {
+  const st = S.state;
+  if (S.spectator) {
+    if (st.winner === -1) { setStatus(`Nulle entre les deux IA (${st.reason})`); bump("spectateur", "nul"); }
+    else {
+      const who = st.winner === 0 ? "w" : "b", lv = S.specOrder[who];
+      setStatus(`${S.levels[lv].label} (${SIDE[who].toLowerCase()}) gagne : ${st.reason}`, who);
+      bump("spectateur", lv === "expert" ? "ia" : "humain");
+    }
+    const gen = S.gen;
+    setTimeout(() => { if (S.spectator && gen === S.gen) startSpectator(); }, 5000);
+    return;
+  }
+  if (st.winner === -1) { setStatus(`Partie nulle : ${st.reason}`); bump(S.level, "nul"); }
+  else if ((st.winner === 0 ? "w" : "b") === S.human) { setStatus(`Bravo, vous gagnez ! (${st.reason})`, S.human); bump(S.level, "humain"); }
+  else { setStatus(`L’IA gagne : ${st.reason}`, S.human === "w" ? "b" : "w"); bump(S.level, "ia"); }
+}
+async function reset() {
+  S.gen++; S.moves = []; S.sel = null; S.busy = false; emptyThinking();
+  const gen = S.gen;
+  const st = await api("/api/chess/state", { variant: S.variant, moves: [] });
+  if (gen !== S.gen) return null;
+  applyState(st, null);
+  return gen;
+}
+async function newGame() {
+  S.spectator = false; $("spectate").setAttribute("aria-pressed", "false");
+  try {
+    const gen = await reset(); if (gen === null) return;
+    if (S.human === "b") aiTurn(S.level);
+  } catch { setStatus("Serveur injoignable : lancez « python demo/server.py »", null, true); }
+}
+async function startSpectator() {
+  S.spectator = true; $("spectate").setAttribute("aria-pressed", "true");
+  S.specOrder = S.specGames++ % 2 === 0 ? { w: "expert", b: "mcts" } : { w: "mcts", b: "expert" };
+  let gen;
+  try { gen = await reset(); } catch { setStatus("Serveur injoignable : lancez « python demo/server.py »", null, true); return; }
+  while (gen !== null && S.spectator && gen === S.gen && !S.state.over) {
+    if (!(await aiTurn(S.specOrder[S.state.turn]))) return;
+    await sleep(150);
+  }
+}
+
+// ------------------------------------------------------------ contrôles
+function renderLevels() {
+  const box = $("levels"); box.innerHTML = "";
+  for (const [k, lv] of Object.entries(S.levels)) {
+    const b = document.createElement("button");
+    b.textContent = lv.label; b.disabled = !lv.available;
+    b.setAttribute("aria-pressed", String(k === S.level));
+    b.onclick = () => { S.level = k; renderLevels(); newGame(); };
+    box.appendChild(b);
+  }
+  $("level-desc").textContent = S.levels[S.level].desc;
+}
+function setSide(side) {
+  S.human = side;
+  $("side-w").setAttribute("aria-pressed", String(side === "w")); $("side-b").setAttribute("aria-pressed", String(side === "b"));
+  newGame();
+}
+$("side-w").onclick = () => setSide("w");
+$("side-b").onclick = () => setSide("b");
+$("new").onclick = newGame;
+$("spectate").onclick = () => (S.spectator ? newGame() : startSpectator());
+document.addEventListener("keydown", (e) => { if (e.key === "n" || e.key === "N") newGame(); if (e.key === "Escape") { S.sel = null; if (S.state) renderBoard(); } });
+
+const TEXTS = {
+  mini: ["Affrontez l’IA aux échecs (version mini)",
+         "Roi, fou, cavalier, tour et 4 pions de chaque côté. L’IA a appris seule, en 4\u202f608 parties contre elle-même. Après 100 demi-coups, la partie est arbitrée au matériel : celui qui a 3 points d’avance gagne."],
+  standard: ["Affrontez l’IA aux vrais échecs",
+             "Toutes les pièces, toutes les règles. L’IA a appris seule en jouant contre elle-même sur 64 cœurs Modal. Après 200 demi-coups, la partie est arbitrée au matériel : celui qui a 3 points d’avance gagne."],
+};
+async function loadVariant(v) {
+  S.variant = v;
+  $("var-mini").setAttribute("aria-pressed", String(v === "mini")); $("var-std").setAttribute("aria-pressed", String(v === "standard"));
+  $("title").textContent = TEXTS[v][0]; $("subtitle").textContent = TEXTS[v][1];
+  try {
+    const info = await api("/api/chess/info?variant=" + v);
+    S.levels = info.levels; S.level = S.levels.expert.available ? "expert" : "mcts";
+  } catch { setStatus("Serveur injoignable : lancez « python demo/server.py »", null, true); return; }
+  renderLevels(); renderScores(); newGame();
+}
+$("var-mini").onclick = () => loadVariant("mini");
+$("var-std").onclick = () => loadVariant("standard");
+loadVariant("mini");
+</script>
+</body>
+</html>

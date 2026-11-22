@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+runs/*/iter_*.pt
+!runs/*/iter_000.pt
+runs/modal/*/iter_*.pt
+!runs/modal/*/iter_000.pt
+slides_src/fonts/
+# checkpoints non nécessaires à la démo ni aux comparaisons (garder le dépôt léger)
+runs/chess_mini/best.pt
+runs/modal/chess_standard/latest.pt
+runs/modal/chess_standard_v2/iter_000.pt

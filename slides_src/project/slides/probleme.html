@@ -1,0 +1,35 @@
+<section id="probleme" class="co">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s2-holes" width="96" height="96" patternUnits="userSpaceOnUse"><circle cx="48" cy="48" r="30" fill="none" stroke="#111318" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s2-holes)" opacity="0.05"/>
+</svg>
+<div class="crumb"><p class="t"><b>02.</b> Le problème</p><div class="prog"><div class="q d"></div><div class="q c"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div></div></div>
+<h2>Trop de parties pour tout calculer</h2>
+<div style="flex:1;"></div>
+<div style="display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:0;">
+<div class="in" style="--i:0; padding:8px 48px 8px 0; display:flex; flex-direction:column; gap:18px;">
+<p class="mk">PUISSANCE 4</p>
+<p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:128px; font-weight:700; line-height:1; letter-spacing:-0.03em; color:#111318; white-space:nowrap;">4,5×10¹²</p>
+<p class="txt">positions possibles</p>
+</div>
+<div class="in" style="--i:1; padding:8px 48px; border-left:2px solid #CFC7B8; display:flex; flex-direction:column; gap:18px;">
+<p class="mk">ÉCHECS</p>
+<p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:128px; font-weight:700; line-height:1; letter-spacing:-0.03em; color:#111318; white-space:nowrap;">≈10⁴⁴</p>
+<p class="txt">positions possibles</p>
+</div>
+<div class="in" style="--i:2; padding:8px 0 8px 48px; border-left:2px solid #CFC7B8; display:flex; flex-direction:column; gap:18px;">
+<p class="mk">CONNAISSANCE DONNÉE</p>
+<p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:128px; font-weight:700; line-height:1; letter-spacing:-0.03em; color:#D93829;">0</p>
+<p class="txt">à part les règles du jeu</p>
+</div>
+</div>
+<div style="flex:1;"></div>
+<div class="in" style="--i:3; display:flex; align-items:center; gap:0;">
+<p class="m" style="font-size:28px; color:#F4F1EA; background:#111318; padding:16px 26px; border-radius:12px; white-space:nowrap;"><span style="color:#E8A825;">1.</span> MCTS pur</p>
+<div style="flex:1; height:2px; background:#111318;"></div>
+<p class="m" style="font-size:28px; color:#F4F1EA; background:#111318; padding:16px 26px; border-radius:12px; white-space:nowrap;"><span style="color:#E8A825;">2.</span> Self-play + réseau</p>
+<div style="flex:1; height:2px; background:#111318;"></div>
+<p class="m" style="font-size:28px; color:#F4F1EA; background:#D93829; padding:16px 26px; border-radius:12px; white-space:nowrap;"><span style="color:#111318;">3.</span> Les échecs</p>
+</div>
+<aside>≈ 50 s. Le cadre : des jeux à deux joueurs où tout est visible. Le problème n’est pas l’information, c’est la taille : Puissance 4 a environ 4 500 milliards de positions, les échecs de l’ordre de 10 puissance 44. On ne peut pas tout explorer, et on ne donne à l’agent aucune connaissance du jeu : seulement les règles. Notre feuille de route en trois coups : un MCTS pur qui estime les coups en simulant des parties au hasard ; puis le self-play, où l’agent joue contre lui-même pour entraîner un réseau de neurones ; enfin, la même méthode appliquée aux échecs.</aside>
+</section>

@@ -1,0 +1,23 @@
+AZ vs aléatoire                               AZ(latest,sims=100) vs Random : 100V / 0N / 0D sur 100 parties | score 100.0% [IC95 96.3%-100.0%] | Elo +1200 | 10.7s
+AZ vs MCTS pur, mêmes simulations             AZ(latest,sims=100) vs MCTS(sims=100,c=1.41421,random) : 96V / 2N / 2D sur 100 parties | score 97.0% [IC95 91.5%-99.0%] | Elo +604 | 19.0s
+AZ vs MCTS pur, 5x plus de simulations        AZ(latest,sims=100) vs MCTS(sims=500,c=1.41421,random) : 78V / 4N / 18D sur 100 parties | score 80.0% [IC95 71.1%-86.7%] | Elo +241 | 26.1s
+AZ vs MCTS pur, 10x plus de simulations       AZ(latest,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 83V / 2N / 15D sur 100 parties | score 84.0% [IC95 75.6%-89.9%] | Elo +288 | 31.3s
+Réseau seul (0 sim) vs aléatoire              Net(latest) vs Random : 100V / 0N / 0D sur 100 parties | score 100.0% [IC95 96.3%-100.0%] | Elo +1200 | 3.4s
+Réseau seul (0 sim) vs MCTS pur               Net(latest) vs MCTS(sims=100,c=1.41421,random) : 84V / 1N / 15D sur 100 parties | score 84.5% [IC95 76.1%-90.3%] | Elo +295 | 3.8s
+Réseau NON entraîné + PUCT vs MCTS pur        AZ(iter_000,sims=100) vs MCTS(sims=100,c=1.41421,random) : 8V / 2N / 90D sur 100 parties | score 9.0% [IC95 4.8%-16.2%] | Elo -402 | 17.4s
+AZ entraîné vs réseau NON entraîné            AZ(latest,sims=100) vs AZ(iter_000,sims=100) : 100V / 0N / 0D sur 100 parties | score 100.0% [IC95 96.3%-100.0%] | Elo +1200 | 21.5s
+  checkpoint 000 : AZ(iter_000,sims=100) vs MCTS(sims=100,c=1.41421,random) : 7V / 2N / 41D sur 50 parties | score 16.0% [IC95 8.3%-28.5%] | Elo -288 | 10.2s
+  checkpoint 003 : AZ(iter_003,sims=100) vs MCTS(sims=100,c=1.41421,random) : 29V / 5N / 16D sur 50 parties | score 63.0% [IC95 49.1%-75.0%] | Elo +92 | 11.7s
+  checkpoint 006 : AZ(iter_006,sims=100) vs MCTS(sims=100,c=1.41421,random) : 32V / 4N / 14D sur 50 parties | score 68.0% [IC95 54.2%-79.2%] | Elo +131 | 11.9s
+  checkpoint 009 : AZ(iter_009,sims=100) vs MCTS(sims=100,c=1.41421,random) : 39V / 3N / 8D sur 50 parties | score 81.0% [IC95 68.1%-89.5%] | Elo +252 | 12.7s
+  checkpoint 012 : AZ(iter_012,sims=100) vs MCTS(sims=100,c=1.41421,random) : 40V / 4N / 6D sur 50 parties | score 84.0% [IC95 71.5%-91.7%] | Elo +288 | 12.5s
+  checkpoint 015 : AZ(iter_015,sims=100) vs MCTS(sims=100,c=1.41421,random) : 43V / 1N / 6D sur 50 parties | score 87.0% [IC95 75.0%-93.7%] | Elo +330 | 12.2s
+  checkpoint 018 : AZ(iter_018,sims=100) vs MCTS(sims=100,c=1.41421,random) : 44V / 1N / 5D sur 50 parties | score 89.0% [IC95 77.4%-95.0%] | Elo +363 | 12.1s
+  checkpoint 021 : AZ(iter_021,sims=100) vs MCTS(sims=100,c=1.41421,random) : 45V / 1N / 4D sur 50 parties | score 91.0% [IC95 79.9%-96.3%] | Elo +402 | 11.5s
+  checkpoint 024 : AZ(iter_024,sims=100) vs MCTS(sims=100,c=1.41421,random) : 47V / 0N / 3D sur 50 parties | score 94.0% [IC95 83.8%-97.9%] | Elo +478 | 12.4s
+  checkpoint 027 : AZ(iter_027,sims=100) vs MCTS(sims=100,c=1.41421,random) : 47V / 0N / 3D sur 50 parties | score 94.0% [IC95 83.8%-97.9%] | Elo +478 | 11.4s
+  checkpoint 030 : AZ(iter_030,sims=100) vs MCTS(sims=100,c=1.41421,random) : 42V / 3N / 5D sur 50 parties | score 87.0% [IC95 75.0%-93.7%] | Elo +330 | 12.3s
+  checkpoint 033 : AZ(iter_033,sims=100) vs MCTS(sims=100,c=1.41421,random) : 44V / 2N / 4D sur 50 parties | score 90.0% [IC95 78.6%-95.7%] | Elo +382 | 12.4s
+  checkpoint 036 : AZ(iter_036,sims=100) vs MCTS(sims=100,c=1.41421,random) : 45V / 1N / 4D sur 50 parties | score 91.0% [IC95 79.9%-96.3%] | Elo +402 | 13.8s
+  checkpoint 039 : AZ(iter_039,sims=100) vs MCTS(sims=100,c=1.41421,random) : 44V / 2N / 4D sur 50 parties | score 90.0% [IC95 78.6%-95.7%] | Elo +382 | 12.0s
+Résultats dans /home/mehdi_ubuntu/EPITA/rl/results/connect4

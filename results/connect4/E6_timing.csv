@@ -1,0 +1,7 @@
+sims,rollout,seconds_per_move,sims_per_second
+100,random,0.0039,25973
+100,heuristic,0.0145,6885
+1000,random,0.0383,26090
+1000,heuristic,0.1502,6657
+10000,random,0.4001,24997
+10000,heuristic,1.3024,7678

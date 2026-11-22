@@ -1,0 +1,14 @@
+AZ vs aléatoire                               AZ(latest,sims=100) vs Random : 55V / 5N / 0D sur 60 parties | score 95.8% [IC95 87.5%-98.7%] | Elo +545 | 98.2s
+AZ vs MCTS pur, mêmes simulations             AZ(latest,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 35V / 14N / 11D sur 60 parties | score 70.0% [IC95 57.5%-80.1%] | Elo +147 | 99.8s
+AZ vs MCTS pur, 5x plus de simulations        AZ(latest,sims=100) vs MCTS(sims=500,c=1.41421,captures) : 8V / 10N / 42D sur 60 parties | score 21.7% [IC95 13.1%-33.6%] | Elo -223 | 150.1s
+AZ vs MCTS pur, 10x plus de simulations       AZ(latest,sims=100) vs MCTS(sims=1000,c=1.41421,captures) : 2V / 6N / 52D sur 60 parties | score 8.3% [IC95 3.6%-18.1%] | Elo -417 | 225.5s
+Réseau seul (0 sim) vs aléatoire              Net(latest) vs Random : 53V / 7N / 0D sur 60 parties | score 94.2% [IC95 85.2%-97.8%] | Elo +483 | 3.5s
+Réseau seul (0 sim) vs MCTS pur               Net(latest) vs MCTS(sims=100,c=1.41421,captures) : 13V / 14N / 33D sur 60 parties | score 33.3% [IC95 22.7%-45.9%] | Elo -120 | 20.2s
+Réseau NON entraîné + PUCT vs MCTS pur        AZ(iter_000,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 1V / 1N / 58D sur 60 parties | score 2.5% [IC95 0.6%-10.1%] | Elo -636 | 102.3s
+AZ entraîné vs réseau NON entraîné            AZ(latest,sims=100) vs AZ(iter_000,sims=100) : 39V / 19N / 2D sur 60 parties | score 80.8% [IC95 69.1%-88.8%] | Elo +250 | 180.7s
+  checkpoint 000 : AZ(iter_000,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 0V / 1N / 29D sur 30 parties | score 1.7% [IC95 0.2%-14.1%] | Elo -708 | 53.0s
+  checkpoint 006 : AZ(iter_006,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 3V / 3N / 24D sur 30 parties | score 15.0% [IC95 6.3%-31.6%] | Elo -301 | 50.8s
+  checkpoint 012 : AZ(iter_012,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 10V / 7N / 13D sur 30 parties | score 45.0% [IC95 28.8%-62.3%] | Elo -35 | 52.2s
+  checkpoint 018 : AZ(iter_018,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 16V / 7N / 7D sur 30 parties | score 65.0% [IC95 47.1%-79.5%] | Elo +108 | 51.7s
+  checkpoint 024 : AZ(iter_024,sims=100) vs MCTS(sims=100,c=1.41421,captures) : 18V / 7N / 5D sur 30 parties | score 71.7% [IC95 53.8%-84.6%] | Elo +161 | 51.8s
+Résultats dans /home/mehdi_ubuntu/EPITA/rl/results/chess_mini

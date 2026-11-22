@@ -1,0 +1,5 @@
+numpy>=1.24
+torch>=2.0
+chess>=1.10        # python-chess (règles des échecs)
+matplotlib>=3.7    # figures des expériences
+pytest             # optionnel : tests

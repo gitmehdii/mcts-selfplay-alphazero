@@ -1,0 +1,62 @@
+<section id="mcts" class="co">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s3-holes" width="96" height="96" patternUnits="userSpaceOnUse"><circle cx="48" cy="48" r="30" fill="none" stroke="#111318" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s3-holes)" opacity="0.05"/>
+</svg>
+<div class="crumb"><p class="t"><b>03.</b> MCTS pur · l’algorithme</p><div class="prog"><div class="q d"></div><div class="q d"></div><div class="q c"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div></div></div>
+<h2>Quatre étapes, répétées par milliers</h2>
+<div style="margin-top:44px; display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
+<div class="panel in" style="--i:0;">
+<svg aria-label="Sélection : un chemin rouge descend de la racine jusqu’à une feuille" width="330" height="220" viewBox="0 0 300 200">
+<g stroke="#C9C2B4" stroke-width="3"><line x1="150" y1="28" x2="225" y2="95"/><line x1="80" y1="95" x2="40" y2="165"/></g>
+<g stroke="#D93829" stroke-width="7" stroke-linecap="round"><line x1="150" y1="28" x2="80" y2="95"/><line x1="80" y1="95" x2="120" y2="165"/></g>
+<g fill="#FBF9F4" stroke="#111318" stroke-width="3"><circle cx="225" cy="95" r="17"/><circle cx="40" cy="165" r="17"/></g>
+<g fill="#D93829" stroke="#111318" stroke-width="3"><circle cx="150" cy="28" r="17"/><circle cx="80" cy="95" r="17"/><circle cx="120" cy="165" r="17"/></g>
+</svg>
+<p class="mk">01 · SÉLECTION</p>
+<p class="txt" style="font-size:30px;">Descendre en suivant le meilleur score UCB1.</p>
+</div>
+<div class="panel in" style="--i:1;">
+<svg aria-label="Expansion : un nouveau nœud or est ajouté sous la feuille" width="330" height="220" viewBox="0 0 300 200">
+<g stroke="#C9C2B4" stroke-width="3"><line x1="150" y1="28" x2="225" y2="95"/><line x1="80" y1="95" x2="40" y2="165"/><line x1="150" y1="28" x2="80" y2="95"/><line x1="80" y1="95" x2="120" y2="165"/></g>
+<line x1="132" y1="172" x2="178" y2="182" stroke="#111318" stroke-width="3" stroke-dasharray="6 6"/>
+<g fill="#FBF9F4" stroke="#111318" stroke-width="3"><circle cx="150" cy="28" r="17"/><circle cx="80" cy="95" r="17"/><circle cx="225" cy="95" r="17"/><circle cx="40" cy="165" r="17"/><circle cx="120" cy="165" r="17"/></g>
+<circle cx="192" cy="182" r="17" fill="#E8A825" stroke="#111318" stroke-width="3"/>
+</svg>
+<p class="mk">02 · EXPANSION</p>
+<p class="txt" style="font-size:30px;">Ajouter un coup jamais essayé.</p>
+</div>
+<div class="panel in" style="--i:2;">
+<svg aria-label="Simulation : une partie jouée au hasard depuis le nouveau nœud jusqu’à la fin" width="330" height="220" viewBox="0 0 300 200">
+<g stroke="#C9C2B4" stroke-width="3"><line x1="150" y1="28" x2="225" y2="95"/><line x1="150" y1="28" x2="80" y2="95"/><line x1="80" y1="95" x2="40" y2="165"/><line x1="80" y1="95" x2="120" y2="165"/></g>
+<g fill="#FBF9F4" stroke="#111318" stroke-width="3"><circle cx="150" cy="28" r="17"/><circle cx="80" cy="95" r="17"/><circle cx="225" cy="95" r="17"/><circle cx="40" cy="165" r="17"/></g>
+<circle cx="120" cy="165" r="17" fill="#E8A825" stroke="#111318" stroke-width="3"/>
+<polyline points="137,158 165,140 190,172 218,148 246,178" fill="none" stroke="#111318" stroke-width="3" stroke-dasharray="6 6" stroke-linejoin="round"/>
+<rect x="244" y="166" width="30" height="30" rx="5" fill="#111318"/>
+</svg>
+<p class="mk">03 · SIMULATION</p>
+<p class="txt" style="font-size:30px;">Finir la partie au hasard : gagné, nul ou perdu.</p>
+</div>
+<div class="panel in" style="--i:3;">
+<svg aria-label="Rétropropagation : le résultat remonte en or le long du chemin jusqu’à la racine" width="330" height="220" viewBox="0 0 300 200">
+<g stroke="#C9C2B4" stroke-width="3"><line x1="150" y1="28" x2="225" y2="95"/><line x1="80" y1="95" x2="40" y2="165"/></g>
+<g stroke="#E8A825" stroke-width="7" stroke-linecap="round"><line x1="150" y1="28" x2="80" y2="95"/><line x1="80" y1="95" x2="120" y2="165"/></g>
+<g fill="#FBF9F4" stroke="#111318" stroke-width="3"><circle cx="225" cy="95" r="17"/><circle cx="40" cy="165" r="17"/></g>
+<g fill="#E8A825" stroke="#111318" stroke-width="3"><circle cx="150" cy="28" r="17"/><circle cx="80" cy="95" r="17"/><circle cx="120" cy="165" r="17"/></g>
+<line x1="272" y1="178" x2="272" y2="40" stroke="#111318" stroke-width="3"/>
+<polygon points="262,46 272,24 282,46" fill="#111318"/>
+</svg>
+<p class="mk">04 · REMONTÉE</p>
+<p class="txt" style="font-size:30px;">Mettre à jour chaque nœud du chemin.</p>
+</div>
+</div>
+<div style="flex:1;"></div>
+<div class="term in" style="--i:4; flex-direction:row; align-items:center; gap:40px;">
+<p style="font-size:24px; color:#A7ABB3;">$ ucb1</p>
+<p style="font-size:42px;"><span style="color:#E8A825;">Q(s,a)</span> + <span style="color:#D93829;">c</span>·√( ln N(s) / N(s,a) )</p>
+<div style="flex:1;"></div>
+<p style="font-size:24px; color:#A7ABB3;"><span style="color:#E8A825;">Q</span> exploite · <span style="color:#D93829;">c·√…</span> explore</p>
+</div>
+<p class="foot">Le coup joué : l’enfant le plus visité</p>
+<aside>≈ 1 min 15. Le cœur du niveau 1. Pour choisir un coup, on construit un arbre en répétant quatre étapes. Un : sélection, on descend en suivant la formule UCB1, le chemin rouge. Deux : expansion, on ajoute un coup jamais essayé, le jeton or. Trois : simulation, on termine la partie au hasard. Quatre : remontée, le résultat met à jour chaque nœud du chemin. La formule du terminal est l’idée clé : Q favorise les coups qui gagnent souvent, le second terme donne un bonus aux coups peu explorés, et la constante c règle l’équilibre ; on l’a mesurée. À la fin, on joue le coup le plus visité. Aucune connaissance de Puissance 4 n’est codée : seulement les règles.</aside>
+</section>

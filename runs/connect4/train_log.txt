@@ -1,0 +1,55 @@
+Jeu connect4 | réseau 64x5 (0.39 M paramètres) | cuda
+[it   1] 256 parties (82s, long. moy. 24.7, J1 55% / J2 41% / nul 4%) | buffer 6318 | L_pi 1.813 L_v 0.396 H 1.81 (27s)
+[it   2] 256 parties (90s, long. moy. 23.8, J1 56% / J2 38% / nul 6%) | buffer 12416 | L_pi 1.627 L_v 0.325 H 1.63 (9s)
+    éval : AZ(iter_003,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 6V / 1N / 33D sur 40 parties | score 16.2% [IC95 7.9%-30.5%] | Elo -285 | 28.1s
+[it   3] 256 parties (90s, long. moy. 26.3, J1 52% / J2 43% / nul 4%) | buffer 19158 | L_pi 1.486 L_v 0.349 H 1.49 (15s) | score éval 0.1625
+[it   4] 256 parties (103s, long. moy. 29.4, J1 57% / J2 32% / nul 11%) | buffer 26692 | L_pi 1.414 L_v 0.342 H 1.41 (13s)
+[it   5] 256 parties (63s, long. moy. 30.5, J1 43% / J2 47% / nul 10%) | buffer 34488 | L_pi 1.366 L_v 0.352 H 1.37 (7s)
+    éval : AZ(iter_006,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 7V / 2N / 31D sur 40 parties | score 20.0% [IC95 10.5%-34.8%] | Elo -241 | 12.9s
+[it   6] 256 parties (51s, long. moy. 30.7, J1 41% / J2 50% / nul 9%) | buffer 42343 | L_pi 1.332 L_v 0.348 H 1.33 (6s) | score éval 0.2
+[it   7] 256 parties (46s, long. moy. 29.8, J1 41% / J2 49% / nul 10%) | buffer 49976 | L_pi 1.310 L_v 0.354 H 1.31 (6s)
+[it   8] 256 parties (52s, long. moy. 32.2, J1 32% / J2 55% / nul 13%) | buffer 58229 | L_pi 1.280 L_v 0.353 H 1.28 (6s)
+    éval : AZ(iter_009,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 17V / 2N / 21D sur 40 parties | score 45.0% [IC95 30.7%-60.2%] | Elo -35 | 15.4s
+[it   9] 256 parties (45s, long. moy. 29.9, J1 31% / J2 59% / nul 11%) | buffer 65888 | L_pi 1.264 L_v 0.351 H 1.26 (6s) | score éval 0.45
+[it  10] 256 parties (49s, long. moy. 32.4, J1 37% / J2 52% / nul 11%) | buffer 74178 | L_pi 1.248 L_v 0.351 H 1.25 (6s)
+[it  11] 256 parties (50s, long. moy. 32.7, J1 45% / J2 39% / nul 16%) | buffer 82543 | L_pi 1.238 L_v 0.343 H 1.24 (6s)
+    éval : AZ(iter_012,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 23V / 1N / 16D sur 40 parties | score 58.8% [IC95 43.4%-72.6%] | Elo +61 | 35.4s
+[it  12] 256 parties (66s, long. moy. 31.9, J1 41% / J2 47% / nul 12%) | buffer 90700 | L_pi 1.227 L_v 0.347 H 1.23 (15s) | score éval 0.5875
+[it  13] 256 parties (56s, long. moy. 31.7, J1 48% / J2 43% / nul 9%) | buffer 98825 | L_pi 1.220 L_v 0.350 H 1.22 (6s)
+[it  14] 256 parties (50s, long. moy. 32.6, J1 35% / J2 49% / nul 16%) | buffer 107177 | L_pi 1.212 L_v 0.352 H 1.21 (6s)
+    éval : AZ(iter_015,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 26V / 1N / 13D sur 40 parties | score 66.2% [IC95 50.8%-78.9%] | Elo +117 | 13.1s
+[it  15] 256 parties (49s, long. moy. 32.2, J1 42% / J2 38% / nul 20%) | buffer 115425 | L_pi 1.202 L_v 0.346 H 1.20 (6s) | score éval 0.6625
+[it  16] 256 parties (52s, long. moy. 32.7, J1 40% / J2 45% / nul 15%) | buffer 123801 | L_pi 1.194 L_v 0.348 H 1.19 (10s)
+[it  17] 256 parties (51s, long. moy. 33.4, J1 30% / J2 54% / nul 16%) | buffer 132362 | L_pi 1.185 L_v 0.350 H 1.18 (6s)
+    éval : AZ(iter_018,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 27V / 3N / 10D sur 40 parties | score 71.2% [IC95 55.9%-82.9%] | Elo +158 | 12.6s
+[it  18] 256 parties (49s, long. moy. 32.0, J1 37% / J2 49% / nul 14%) | buffer 140547 | L_pi 1.178 L_v 0.346 H 1.18 (7s) | score éval 0.7125
+[it  19] 256 parties (50s, long. moy. 32.8, J1 31% / J2 50% / nul 19%) | buffer 148948 | L_pi 1.170 L_v 0.346 H 1.17 (7s)
+[it  20] 256 parties (50s, long. moy. 32.8, J1 38% / J2 46% / nul 16%) | buffer 150000 | L_pi 1.130 L_v 0.345 H 1.13 (7s)
+    éval : AZ(iter_021,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 25V / 0N / 15D sur 40 parties | score 62.5% [IC95 47.0%-75.8%] | Elo +89 | 14.1s
+[it  21] 256 parties (52s, long. moy. 33.8, J1 40% / J2 39% / nul 21%) | buffer 150000 | L_pi 1.104 L_v 0.344 H 1.10 (7s) | score éval 0.625
+[it  22] 256 parties (53s, long. moy. 33.4, J1 39% / J2 42% / nul 19%) | buffer 150000 | L_pi 1.088 L_v 0.340 H 1.09 (7s)
+[it  23] 256 parties (55s, long. moy. 35.0, J1 34% / J2 37% / nul 30%) | buffer 150000 | L_pi 1.072 L_v 0.332 H 1.07 (7s)
+    éval : AZ(iter_024,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 26V / 2N / 12D sur 40 parties | score 67.5% [IC95 52.0%-79.9%] | Elo +127 | 14.0s
+[it  24] 256 parties (103s, long. moy. 34.3, J1 34% / J2 38% / nul 28%) | buffer 150000 | L_pi 1.055 L_v 0.326 H 1.05 (7s) | score éval 0.675
+[it  25] 256 parties (56s, long. moy. 34.4, J1 32% / J2 44% / nul 24%) | buffer 150000 | L_pi 1.034 L_v 0.319 H 1.03 (7s)
+[it  26] 256 parties (59s, long. moy. 33.8, J1 38% / J2 39% / nul 23%) | buffer 150000 | L_pi 1.025 L_v 0.318 H 1.02 (7s)
+    éval : AZ(iter_027,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 31V / 2N / 7D sur 40 parties | score 80.0% [IC95 65.2%-89.5%] | Elo +241 | 13.4s
+[it  27] 256 parties (57s, long. moy. 34.9, J1 29% / J2 41% / nul 30%) | buffer 150000 | L_pi 1.010 L_v 0.310 H 1.01 (7s) | score éval 0.8
+[it  28] 256 parties (66s, long. moy. 35.1, J1 30% / J2 43% / nul 26%) | buffer 150000 | L_pi 1.000 L_v 0.307 H 1.00 (7s)
+[it  29] 256 parties (69s, long. moy. 37.1, J1 32% / J2 23% / nul 45%) | buffer 150000 | L_pi 0.981 L_v 0.296 H 0.98 (7s)
+    éval : AZ(iter_030,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 31V / 0N / 9D sur 40 parties | score 77.5% [IC95 62.5%-87.7%] | Elo +215 | 13.8s
+[it  30] 256 parties (67s, long. moy. 36.0, J1 22% / J2 36% / nul 42%) | buffer 150000 | L_pi 0.962 L_v 0.286 H 0.96 (10s) | score éval 0.775
+[it  31] 256 parties (66s, long. moy. 35.5, J1 27% / J2 34% / nul 39%) | buffer 150000 | L_pi 0.939 L_v 0.263 H 0.94 (7s)
+[it  32] 256 parties (66s, long. moy. 35.6, J1 21% / J2 31% / nul 48%) | buffer 150000 | L_pi 0.919 L_v 0.251 H 0.92 (7s)
+    éval : AZ(iter_033,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 26V / 2N / 12D sur 40 parties | score 67.5% [IC95 52.0%-79.9%] | Elo +127 | 29.8s
+[it  33] 256 parties (67s, long. moy. 36.3, J1 19% / J2 36% / nul 45%) | buffer 150000 | L_pi 0.906 L_v 0.246 H 0.91 (10s) | score éval 0.675
+[it  34] 256 parties (106s, long. moy. 36.8, J1 20% / J2 32% / nul 48%) | buffer 150000 | L_pi 0.885 L_v 0.237 H 0.89 (7s)
+[it  35] 256 parties (64s, long. moy. 37.9, J1 16% / J2 28% / nul 56%) | buffer 150000 | L_pi 0.868 L_v 0.227 H 0.87 (6s)
+    éval : AZ(iter_036,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 30V / 1N / 9D sur 40 parties | score 76.2% [IC95 61.1%-86.8%] | Elo +203 | 15.7s
+[it  36] 256 parties (62s, long. moy. 37.1, J1 21% / J2 28% / nul 51%) | buffer 150000 | L_pi 0.851 L_v 0.224 H 0.85 (6s) | score éval 0.7625
+[it  37] 256 parties (66s, long. moy. 36.3, J1 27% / J2 35% / nul 38%) | buffer 150000 | L_pi 0.832 L_v 0.220 H 0.83 (7s)
+[it  38] 256 parties (68s, long. moy. 35.5, J1 21% / J2 34% / nul 45%) | buffer 150000 | L_pi 0.823 L_v 0.215 H 0.83 (7s)
+    éval : AZ(iter_039,sims=100) vs MCTS(sims=1000,c=1.41421,random) : 28V / 2N / 10D sur 40 parties | score 72.5% [IC95 57.2%-83.9%] | Elo +168 | 14.7s
+[it  39] 256 parties (65s, long. moy. 36.8, J1 23% / J2 26% / nul 52%) | buffer 150000 | L_pi 0.811 L_v 0.206 H 0.81 (7s) | score éval 0.725
+[it  40] 256 parties (70s, long. moy. 37.8, J1 17% / J2 23% / nul 61%) | buffer 150000 | L_pi 0.794 L_v 0.202 H 0.80 (7s)
+Terminé. Checkpoints dans runs/connect4

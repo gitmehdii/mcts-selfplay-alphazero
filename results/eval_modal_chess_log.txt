@@ -1,0 +1,10 @@
+AZ vs aléatoire                                  AZ(latest,sims=64) vs Random : 36V / 4N / 0D sur 40 parties | score 95.0% [IC95 83.5%-98.6%] | Elo +512 | 61.2s
+AZ vs MCTS pur, mêmes simulations (64)           AZ(latest,sims=64) vs MCTS(sims=64,c=1.41421,captures) : 32V / 8N / 0D sur 40 parties | score 90.0% [IC95 76.9%-96.0%] | Elo +382 | 65.2s
+AZ vs MCTS pur, 5× plus de simulations (320)     AZ(latest,sims=64) vs MCTS(sims=320,c=1.41421,captures) : 29V / 8N / 3D sur 40 parties | score 82.5% [IC95 68.0%-91.3%] | Elo +269 | 140.4s
+AZ vs MCTS pur, 10× plus de simulations (640)    AZ(latest,sims=64) vs MCTS(sims=640,c=1.41421,captures) : 27V / 7N / 6D sur 40 parties | score 76.2% [IC95 61.1%-86.8%] | Elo +203 | 248.9s
+Réseau seul (0 sim) vs aléatoire                 Net(latest) vs Random : 6V / 33N / 1D sur 40 parties | score 56.2% [IC95 41.0%-70.4%] | Elo +44 | 4.2s
+Réseau NON entraîné + PUCT vs MCTS pur (64)      AZ(iter_000,sims=64) vs MCTS(sims=64,c=1.41421,captures) : 5V / 0N / 35D sur 40 parties | score 12.5% [IC95 5.5%-26.1%] | Elo -338 | 99.4s
+AZ entraîné vs AZ non entraîné                   AZ(latest,sims=64) vs AZ(iter_000,sims=64) : 29V / 9N / 2D sur 40 parties | score 83.8% [IC95 69.5%-92.1%] | Elo +285 | 169.2s
+fins de partie : {('victoire', 'mat'): 16, ('victoire', 'arbitrage à 200 demi-coups'): 13, ('nulle', 'répétition'): 9, ('nulle', 'pat'): 2}
+Résultats dans /home/mehdi_ubuntu/EPITA/rl/results/chess_standard
+exit 0

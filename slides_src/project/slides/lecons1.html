@@ -1,0 +1,34 @@
+<section id="lecons1" class="co">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s7-holes" width="96" height="96" patternUnits="userSpaceOnUse"><circle cx="48" cy="48" r="30" fill="none" stroke="#111318" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s7-holes)" opacity="0.05"/>
+</svg>
+<div class="crumb"><p class="t"><b>07.</b> MCTS pur · trois mesures</p><div class="prog"><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q c"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div></div></div>
+<h2>Plus de calcul paie toujours</h2>
+<div style="margin-top:56px; display:grid; grid-template-columns:repeat(3, 1fr); gap:0;">
+<div class="in" style="--i:0; border-top:6px solid #111318; padding:28px 40px 0 0; display:flex; flex-direction:column; gap:16px;">
+<p class="mk">BUDGET DE CALCUL</p>
+<p class="big" style="font-size:88px;">+100 Elo</p>
+<p class="txt">à chaque doublement des simulations, sans plafond jusqu’à 8 000.</p>
+<div style="flex:1;"></div>
+<p class="m" style="font-size:24px; color:#F4F1EA; background:#111318; padding:10px 16px; border-radius:10px; align-self:flex-start; white-space:nowrap;">8 000 sims bat 1 000 : 82%</p>
+</div>
+<div class="in" style="--i:1; border-top:6px solid #111318; border-left:2px solid #CFC7B8; padding:28px 40px 0 40px; display:flex; flex-direction:column; gap:16px;">
+<p class="mk">ROLLOUTS MALINS</p>
+<p class="big" style="font-size:88px;">×4</p>
+<p class="txt">plus lents : +100 à +160 Elo à simulations égales, +35 Elo à temps égal.</p>
+<div style="flex:1;"></div>
+<p class="m" style="font-size:24px; color:#F4F1EA; background:#111318; padding:10px 16px; border-radius:10px; align-self:flex-start; white-space:nowrap;">qualité vs quantité</p>
+</div>
+<div class="in" style="--i:2; border-top:6px solid #D93829; border-left:2px solid #CFC7B8; padding:28px 0 0 40px; display:flex; flex-direction:column; gap:16px;">
+<p class="mk">AVANTAGE DU TRAIT</p>
+<p class="big" style="font-size:88px;">53–60%</p>
+<p class="txt">de victoires pour celui qui commence, MCTS contre lui-même.</p>
+<div style="flex:1;"></div>
+<p class="m" style="font-size:24px; color:#F4F1EA; background:#D93829; padding:10px 16px; border-radius:10px; align-self:flex-start; white-space:nowrap;">→ couleurs alternées</p>
+</div>
+</div>
+<div style="flex:1;"></div>
+<p class="in" style="--i:3; font-family:'Space Grotesk', Arial, sans-serif; font-size:48px; font-weight:700; letter-spacing:-0.03em; line-height:1.1; color:#111318; width:1500px;">Pour progresser, il faut des simulations <span style="color:#D93829;">plus intelligentes</span>, pas seulement plus nombreuses.</p>
+<aside>≈ 1 min. Trois enseignements rapides. Un : le calcul paie. Chaque doublement des simulations rapporte environ 100 points Elo, sans plafond visible jusqu’à 8 000 ; 8 000 simulations battent 1 000 à 82 %. Deux : des rollouts plus malins, qui gagnent ou bloquent au lieu de jouer au hasard, rapportent 100 à 160 Elo à nombre de simulations égal, mais ils coûtent quatre fois plus cher. À temps égal, il ne reste que 35 Elo : c’est le compromis qualité contre quantité. Trois : le premier joueur gagne plus souvent, ce qui confirme qu’il faut alterner les couleurs. D’où la conclusion en bas, qui prépare le niveau 2 : il faut des simulations plus intelligentes.</aside>
+</section>

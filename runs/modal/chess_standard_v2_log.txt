@@ -1,0 +1,38 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/gitmehdii/main/ap-noQddw5zOQmBSH6QfVfyMf
+✓ Created objects.
+├── 🔨 Created mount /home/mehdi_ubuntu/EPITA/rl/modal_app.py
+├── 🔨 Created mount PythonPackage:games, PythonPackage:agents, 
+│   PythonPackage:alphazero, PythonPackage:arena
+├── 🔨 Created function eval_worker.
+├── 🔨 Created function selfplay_worker.
+└── 🔨 Created function trainer.
+[chess_standard_v2] poids initiaux repris de runs/chess_standard/latest.pt
+[chess_standard_v2] chess:standard · réseau 64x5 · 64 workers × 12 parties · 64 sims · budget 16.5 $ (arrêt à 14.85 $)
+[it   1] 768 parties (233s, long. 160.5, B 29%/N 31%/nul 40%) | total 768 | L_pi 2.121 L_v 0.208 (15s) | coût estimé 0.37 $
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it   2] 768 parties (267s, long. 162.0, B 35%/N 35%/nul 29%) | total 1536 | L_pi 2.093 L_v 0.204 (14s) | coût estimé 0.76 $
+[it   3] 768 parties (240s, long. 163.6, B 41%/N 41%/nul 18%) | total 2304 | L_pi 2.094 L_v 0.230 (15s) | coût estimé 1.16 $
+[it   4] 768 parties (237s, long. 163.3, B 41%/N 40%/nul 19%) | total 3072 | L_pi 2.090 L_v 0.243 (14s) | coût estimé 1.54 $
+[it   5] 768 parties (223s, long. 161.5, B 41%/N 41%/nul 18%) | total 3840 | L_pi 2.072 L_v 0.237 (15s) | coût estimé 1.99 $ | vs aléatoire 94%, vs MCTS 92%
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it   6] 768 parties (222s, long. 160.2, B 42%/N 38%/nul 20%) | total 4608 | L_pi 2.059 L_v 0.229 (15s) | coût estimé 2.34 $
+[it   7] 768 parties (223s, long. 159.8, B 39%/N 39%/nul 22%) | total 5376 | L_pi 2.060 L_v 0.244 (15s) | coût estimé 2.71 $
+[it   8] 768 parties (309s, long. 162.5, B 37%/N 43%/nul 21%) | total 6144 | L_pi 2.055 L_v 0.240 (14s) | coût estimé 3.12 $
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it   9] 768 parties (277s, long. 163.2, B 38%/N 39%/nul 22%) | total 6912 | L_pi 2.074 L_v 0.234 (14s) | coût estimé 3.51 $
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it  10] 768 parties (244s, long. 166.1, B 38%/N 40%/nul 23%) | total 7680 | L_pi 2.052 L_v 0.233 (15s) | coût estimé 3.94 $ | vs aléatoire 89%, vs MCTS 77%
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it  11] 768 parties (259s, long. 165.8, B 38%/N 37%/nul 25%) | total 8448 | L_pi 2.026 L_v 0.234 (15s) | coût estimé 4.32 $
+Container terminated due to preemption. For more details, see https://modal.com/docs/guide/preemption

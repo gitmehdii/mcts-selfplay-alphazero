@@ -1,0 +1,38 @@
+<section id="archi" class="co">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s4-holes" width="96" height="96" patternUnits="userSpaceOnUse"><circle cx="48" cy="48" r="30" fill="none" stroke="#111318" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s4-holes)" opacity="0.05"/>
+</svg>
+<div class="crumb"><p class="t"><b>04.</b> MCTS pur · implémentation</p><div class="prog"><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q c"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div></div></div>
+<h2>Un moteur, des joueurs, une arène</h2>
+<div class="row" style="margin-top:48px; gap:28px; align-items:stretch;">
+<div class="in" style="--i:0; width:1100px; background:#0E1015; border-radius:20px; display:flex; flex-direction:column;">
+<div style="display:flex; align-items:center; gap:12px; padding:20px 28px; border-bottom:2px solid #22262F;">
+<x-shape kind="ellipse" style="width:16px; height:16px; background:#D93829;"></x-shape>
+<x-shape kind="ellipse" style="width:16px; height:16px; background:#E8A825;"></x-shape>
+<x-shape kind="ellipse" style="width:16px; height:16px; background:#3A3F4B;"></x-shape>
+<p class="m" style="font-size:24px; color:#A7ABB3; margin-left:16px;">rl/ — architecture</p>
+</div>
+<div style="padding:30px 36px; display:flex; flex-direction:column; gap:16px;">
+<div style="display:flex; gap:20px;"><p class="m" style="width:280px; font-size:28px; color:#E8A825; white-space:nowrap;">├─ games/</p><p class="m" style="font-size:28px; color:#A7ABB3; white-space:nowrap;">règles · P4 bitboards · python-chess</p></div>
+<div style="display:flex; gap:20px;"><p class="m" style="width:280px; font-size:28px; color:#E8A825; white-space:nowrap;">├─ agents/</p><p class="m" style="font-size:28px; color:#A7ABB3; white-space:nowrap;">aléatoire · heuristique · humain · MCTS</p></div>
+<div style="display:flex; gap:20px;"><p class="m" style="width:280px; font-size:28px; color:#E8A825; white-space:nowrap;">├─ alphazero/</p><p class="m" style="font-size:28px; color:#A7ABB3; white-space:nowrap;">réseau · PUCT · self-play</p></div>
+<div style="display:flex; gap:20px;"><p class="m" style="width:280px; font-size:28px; color:#E8A825; white-space:nowrap;">├─ experiments/</p><p class="m" style="font-size:28px; color:#A7ABB3; white-space:nowrap;">hyperparamètres · avec ou sans réseau</p></div>
+<div style="display:flex; gap:20px;"><p class="m" style="width:280px; font-size:28px; color:#E8A825; white-space:nowrap;">├─ demo/</p><p class="m" style="font-size:28px; color:#A7ABB3; white-space:nowrap;">démo de stand dans le navigateur</p></div>
+<div style="display:flex; gap:20px;"><p class="m" style="width:280px; font-size:28px; color:#E8A825; white-space:nowrap;">├─ arena.py</p><p class="m" style="font-size:28px; color:#A7ABB3; white-space:nowrap;">couleurs alternées · IC 95 % · Elo</p></div>
+<div style="display:flex; gap:20px;"><p class="m" style="width:280px; font-size:28px; color:#E8A825; white-space:nowrap;">└─ play.py</p><p class="m" style="font-size:28px; color:#A7ABB3; white-space:nowrap;">humain ou agent, en une commande</p></div>
+</div>
+<div style="flex:1;"></div>
+<div style="padding:22px 36px; border-top:2px solid #22262F;">
+<p class="m" style="font-size:28px; color:#F4F1EA; white-space:nowrap;"><span style="color:#D93829;">$</span> python play.py --p1 human --p2 mcts:sims=2000</p>
+</div>
+</div>
+<div class="in" style="--i:1; flex:1; background:#B32A1C; border-radius:20px; padding:36px 40px; display:flex; flex-direction:column; justify-content:center; gap:14px;">
+<p class="m" style="font-size:24px; letter-spacing:2px; color:#F4F1EA;">VITESSE</p>
+<p class="m" style="font-size:96px; font-weight:700; line-height:1; letter-spacing:-0.04em; color:#F4F1EA; white-space:nowrap;">26 000</p>
+<p style="font-size:30px; font-weight:700; color:#F4F1EA;">simulations par seconde</p>
+<p style="font-size:26px; color:#F4F1EA;">en Python pur, grâce aux bitboards : un alignement se teste en 4 opérations binaires.</p>
+</div>
+</div>
+<aside>≈ 45 s. L’architecture, façon éditeur de code. games/ contient les règles : Puissance 4 en bitboards et les échecs via python-chess. agents/ contient les joueurs. alphazero/ le réseau, la recherche PUCT et le self-play. arena.py organise les matchs : couleurs alternées, parce que commencer donne un avantage, et chaque score vient avec un intervalle de confiance. Le bloc rouge : grâce aux bitboards, on teste un alignement en quatre opérations binaires, d’où 26 000 simulations par seconde même en Python. Une seule commande suffit pour jouer contre l’agent ; vous pourrez essayer au stand.</aside>
+</section>

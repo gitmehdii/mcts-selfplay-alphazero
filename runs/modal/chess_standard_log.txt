@@ -1,0 +1,215 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/gitmehdii/main/ap-ba2Hy5CWvhCGsZPxx10Ae0
+✓ Created objects.
+├── 🔨 Created mount /home/mehdi_ubuntu/EPITA/rl/modal_app.py
+├── 🔨 Created mount PythonPackage:games, PythonPackage:agents, 
+│   PythonPackage:alphazero, PythonPackage:arena
+├── 🔨 Created function eval_worker.
+├── 🔨 Created function trainer.
+└── 🔨 Created function selfplay_worker.
+[chess_standard] chess:standard · réseau 64x5 · 64 workers × 12 parties · 64 sims · budget 25.0 $ (arrêt à 22.50 $)
+[it   1] 768 parties (241s, long. 125.4, B 44%/N 49%/nul 8%) | total 768 | L_pi 4.039 L_v 0.482 (18s) | coût estimé 0.34 $
+[it   2] 768 parties (231s, long. 172.9, B 41%/N 39%/nul 20%) | total 1536 | L_pi 3.118 L_v 0.370 (17s) | coût estimé 0.72 $
+[it   3] 768 parties (235s, long. 170.2, B 40%/N 43%/nul 18%) | total 2304 | L_pi 2.699 L_v 0.353 (17s) | coût estimé 1.09 $
+[it   4] 768 parties (224s, long. 167.4, B 45%/N 41%/nul 13%) | total 3072 | L_pi 2.447 L_v 0.335 (17s) | coût estimé 1.46 $
+[it   5] 768 parties (224s, long. 170.9, B 44%/N 44%/nul 13%) | total 3840 | L_pi 2.363 L_v 0.323 (17s) | coût estimé 1.90 $ | vs aléatoire 94%, vs MCTS 67%
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it   6] 768 parties (293s, long. 171.1, B 46%/N 41%/nul 13%) | total 4608 | L_pi 2.294 L_v 0.292 (17s) | coût estimé 2.31 $
+[it   7] 768 parties (246s, long. 175.2, B 41%/N 42%/nul 17%) | total 5376 | L_pi 2.219 L_v 0.271 (16s) | coût estimé 2.72 $
+[it   8] 768 parties (232s, long. 171.6, B 44%/N 42%/nul 14%) | total 6144 | L_pi 2.167 L_v 0.265 (17s) | coût estimé 3.10 $
+Runner terminated.
+Container terminated due to preemption. For more details, see https://modal.com/docs/guide/preemption
+[it   9] 768 parties (235s, long. 173.9, B 43%/N 43%/nul 14%) | total 6912 | L_pi 2.146 L_v 0.265 (17s) | coût estimé 3.49 $
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it  10] 768 parties (269s, long. 172.8, B 42%/N 43%/nul 16%) | total 7680 | L_pi 2.113 L_v 0.255 (17s) | coût estimé 3.97 $ | vs aléatoire 81%, vs MCTS 67%
+[it  11] 768 parties (231s, long. 172.5, B 41%/N 41%/nul 18%) | total 8448 | L_pi 2.080 L_v 0.249 (17s) | coût estimé 4.36 $
+Container terminated due to preemption. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it  12] 768 parties (245s, long. 172.6, B 41%/N 40%/nul 18%) | total 9216 | L_pi 2.057 L_v 0.242 (17s) | coût estimé 4.76 $
+[it  13] 768 parties (248s, long. 171.0, B 44%/N 41%/nul 15%) | total 9984 | L_pi 2.053 L_v 0.238 (17s) | coût estimé 5.14 $
+[it  14] 768 parties (245s, long. 174.9, B 38%/N 47%/nul 15%) | total 10752 | L_pi 2.052 L_v 0.240 (16s) | coût estimé 5.54 $
+[it  15] 768 parties (246s, long. 178.0, B 44%/N 40%/nul 16%) | total 11520 | L_pi 2.055 L_v 0.241 (17s) | coût estimé 6.04 $ | vs aléatoire 78%, vs MCTS 73%
+[it  16] 768 parties (255s, long. 175.5, B 42%/N 39%/nul 19%) | total 12288 | L_pi 2.045 L_v 0.241 (17s) | coût estimé 6.43 $
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+[it  17] 768 parties (268s, long. 174.0, B 42%/N 38%/nul 20%) | total 13056 | L_pi 2.048 L_v 0.241 (16s) | coût estimé 6.83 $
+[it  18] 768 parties (242s, long. 176.7, B 42%/N 42%/nul 15%) | total 13824 | L_pi 2.052 L_v 0.240 (17s) | coût estimé 7.22 $
+[it  19] 768 parties (304s, long. 174.2, B 44%/N 41%/nul 15%) | total 14592 | L_pi 2.047 L_v 0.240 (18s) | coût estimé 7.65 $
+Container terminated due to preemption. For more details, see https://modal.com/docs/guide/preemption
+[it  20] 768 parties (243s, long. 174.5, B 42%/N 42%/nul 16%) | total 15360 | L_pi 2.048 L_v 0.238 (17s) | coût estimé 8.12 $ | vs aléatoire 72%, vs MCTS 67%
+Stopping app - user stopped from CLI.
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+   worker en échec : RemoteError('')
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+Runner terminated.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/mehdi_ubuntu/EPITA/rl/modal_app.py:244 in main                         │
+│                                                                              │
+│   243 │   │   raise SystemExit("Budget refusé : plafond convenu de 25 $.")   │
+│ ❱ 244 │   print(trainer.remote(run, game, budget, workers, games_per_worker, │
+│   245 │   │   │   │   │   │    eval_every, eval_games, channels, blocks))    │
+│                                                                              │
+│ /home/mehdi_ubuntu/.pipenv-venv/lib/python3.12/site-packages/modal/_object.p │
+│ y:45 in wrapped                                                              │
+│                                                                              │
+│    44 │   │   await self.hydrate()                                           │
+│ ❱  45 │   │   return await method(self, *args, **kwargs)                     │
+│    46                                                                        │
+│                                                                              │
+│ /home/mehdi_ubuntu/.pipenv-venv/lib/python3.12/site-packages/modal/_function │
+│ s.py:1761 in remote                                                          │
+│                                                                              │
+│   1760 │   │                                                                 │
+│ ❱ 1761 │   │   return await self._call_function(args, kwargs)                │
+│   1762                                                                       │
+│                                                                              │
+│ /home/mehdi_ubuntu/.pipenv-venv/lib/python3.12/site-packages/modal/_function │
+│ s.py:1699 in _call_function                                                  │
+│                                                                              │
+│   1698 │   │                                                                 │
+│ ❱ 1699 │   │   return await invocation.run_function()                        │
+│   1700                                                                       │
+│                                                                              │
+│ /home/mehdi_ubuntu/.pipenv-venv/lib/python3.12/site-packages/modal/_function │
+│ s.py:475 in run_function                                                     │
+│                                                                              │
+│    474 │   │   │   if await_response.output.result.status in TERMINAL_STATUS │
+│ ❱  475 │   │   │   │   return await _process_result(                         │
+│    476 │   │   │   │   │   await_response.output.result, await_response.outp │
+│                                                                              │
+│ /home/mehdi_ubuntu/.pipenv-venv/lib/python3.12/site-packages/modal/_utils/fu │
+│ nction_utils.py:550 in _process_result                                       │
+│                                                                              │
+│   549 │   │                                                                  │
+│ ❱ 550 │   │   raise RemoteError(result.exception)                            │
+│   551                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteError

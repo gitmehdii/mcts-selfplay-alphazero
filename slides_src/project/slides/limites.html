@@ -1,0 +1,27 @@
+<section id="limites" class="co obs">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s15-grid" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="120" height="120" fill="none" stroke="#F4F1EA" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s15-grid)" opacity="0.04"/>
+</svg>
+<p class="ranks">8<br>7<br>6<br>5<br>4<br>3<br>2<br>1</p>
+<div class="crumb"><p class="t"><b>15.</b> Recul · freins et suite</p><div class="prog"><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q c"></div><div class="q"></div></div></div>
+<h2>Nos limites, et la suite</h2>
+<div style="margin-top:44px; display:grid; grid-template-columns:760px 96px 760px; gap:16px 24px; align-items:stretch;">
+<p class="m" style="font-size:26px; font-weight:700; letter-spacing:2px; color:#F4F1EA; background:#D93829; padding:14px 28px; border-radius:14px;">FREINS</p>
+<div></div>
+<p class="m" style="font-size:26px; font-weight:700; letter-spacing:2px; color:#0E1015; background:#E8A825; padding:14px 28px; border-radius:14px;">PROCHAINES ÉTAPES</p>
+
+<div class="tile in" style="--i:0; padding:26px 32px; gap:10px;"><h3 style="font-size:34px;">Il mate mal</h3><p class="txt" style="font-size:26px;">Le réseau seul gagne du matériel mais fait nulle 33 fois sur 40.</p></div>
+<p class="m" style="font-size:48px; font-weight:700; color:#E8A825; align-self:center; text-align:center;">→</p>
+<div class="in" style="--i:0; background:#F4F1EA; border-radius:20px; padding:26px 32px; display:flex; flex-direction:column; gap:10px;"><h3 style="font-size:34px; color:#111318;">Plus de self-play</h3><p class="txt" style="font-size:26px; color:#4A4E57;">La finition s’apprend en dernier : 24 576 parties contre 44 millions pour AlphaZero.</p></div>
+
+<div class="tile in" style="--i:1; padding:26px 32px; gap:10px;"><h3 style="font-size:34px;">Cibles bruitées</h3><p class="txt" style="font-size:26px;">64 simulations par coup en self-play : la perte de la policy plafonne.</p></div>
+<p class="m" style="font-size:48px; font-weight:700; color:#E8A825; align-self:center; text-align:center;">→</p>
+<div class="in" style="--i:1; background:#F4F1EA; border-radius:20px; padding:26px 32px; display:flex; flex-direction:column; gap:10px;"><h3 style="font-size:34px; color:#111318;">200 simulations par coup</h3><p class="txt" style="font-size:26px; color:#4A4E57;">Des cibles π plus propres à chaque position.</p></div>
+
+<div class="tile in" style="--i:2; padding:26px 32px; gap:10px;"><h3 style="font-size:34px;">Petit réseau</h3><p class="txt" style="font-size:26px;">5 blocs × 64 canaux et une couche policy à 4 096 sorties.</p></div>
+<p class="m" style="font-size:48px; font-weight:700; color:#E8A825; align-self:center; text-align:center;">→</p>
+<div class="in" style="--i:2; background:#F4F1EA; border-radius:20px; padding:26px 32px; display:flex; flex-direction:column; gap:10px;"><h3 style="font-size:34px; color:#111318;">Tête policy convolutive</h3><p class="txt" style="font-size:26px; color:#4A4E57;">Comme AlphaZero, et un réseau plus profond.</p></div>
+</div>
+<aside>≈ 1 min. Un regard critique, sous forme de tableau : à gauche nos freins, à droite ce qu’on ferait ensuite. Le frein principal du début, le self-play sur un seul cœur, est levé grâce à Modal. Il en reste trois. Un : l’agent mate mal ; le réseau seul gagne du matériel mais fait nulle 33 fois sur 40 contre un joueur aléatoire. La finition s’apprend en dernier : il faudrait beaucoup plus de parties, on en a 24 576 contre 44 millions pour AlphaZero. Deux : avec 64 simulations par coup, les cibles d’apprentissage sont bruitées et la perte de la policy plafonne ; on passerait à 200. Trois : notre réseau est petit ; on adopterait la tête policy convolutive d’AlphaZero et un réseau plus profond.</aside>
+</section>

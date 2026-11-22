@@ -1,0 +1,37 @@
+<section id="complets" class="co">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s14-grid" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="120" height="120" fill="none" stroke="#111318" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s14-grid)" opacity="0.05"/>
+</svg>
+<p class="ranks" style="color:#B9B2A4;">8<br>7<br>6<br>5<br>4<br>3<br>2<br>1</p>
+<div class="crumb"><p class="t"><b>14.</b> Échecs complets · Modal</p><div class="prog"><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q c"></div><div class="q"></div><div class="q"></div></div></div>
+<h2>Les vrais échecs, sur 64 cœurs</h2>
+<div class="in" style="--i:0; margin-top:32px; background:#111318; border-radius:20px; padding:22px 40px; display:flex; align-items:center; justify-content:space-between;">
+<div style="display:flex; align-items:baseline; gap:16px;"><p class="m" style="font-size:56px; font-weight:700; color:#E8A825; white-space:nowrap;">24 576</p><p style="font-size:24px; color:#A7ABB3;">parties<br>de self-play</p></div>
+<div style="width:2px; height:64px; background:#2E3340;"></div>
+<div style="display:flex; align-items:baseline; gap:16px;"><p class="m" style="font-size:56px; font-weight:700; color:#F4F1EA; white-space:nowrap;">64</p><p style="font-size:24px; color:#A7ABB3;">cœurs CPU<br>en parallèle</p></div>
+<div style="width:2px; height:64px; background:#2E3340;"></div>
+<div style="display:flex; align-items:baseline; gap:16px;"><p class="m" style="font-size:56px; font-weight:700; color:#F4F1EA; white-space:nowrap;">4 min</p><p style="font-size:24px; color:#A7ABB3;">pour<br>768 parties</p></div>
+<div style="width:2px; height:64px; background:#2E3340;"></div>
+<div style="display:flex; align-items:baseline; gap:16px;"><p class="m" style="font-size:56px; font-weight:700; color:#F4F1EA; white-space:nowrap;">13 $</p><p style="font-size:24px; color:#A7ABB3;">de calcul<br>au total</p></div>
+</div>
+<div class="row" style="margin-top:40px; gap:44px; align-items:stretch;">
+<div class="in" style="--i:1; width:1000px; display:flex; flex-direction:column; gap:22px;">
+<p class="mk">ALPHAZERO (64 SIMS) CONTRE LE MCTS PUR</p>
+<div style="display:flex; align-items:center; gap:24px;"><p style="width:330px; font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:700; color:#111318;">mêmes simulations</p><div style="width:480px; height:52px; background:#E3DDD0; border-radius:12px; display:flex;"><div style="width:90%; background:linear-gradient(90deg, #D93829, #E8A825); border-radius:12px;"></div></div><p class="m" style="width:140px; font-size:48px; font-weight:700; color:#B32A1C; white-space:nowrap;">90%</p></div>
+<div style="display:flex; align-items:center; gap:24px;"><p style="width:330px; font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:700; color:#111318;">5× plus de calcul</p><div style="width:480px; height:52px; background:#E3DDD0; border-radius:12px; display:flex;"><div style="width:82%; background:linear-gradient(90deg, #D93829, #E8A825); border-radius:12px;"></div></div><p class="m" style="width:140px; font-size:48px; font-weight:700; color:#111318; white-space:nowrap;">82%</p></div>
+<div style="display:flex; align-items:center; gap:24px;"><p style="width:330px; font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:700; color:#111318;">10× plus de calcul</p><div style="width:480px; height:52px; background:#E3DDD0; border-radius:12px; display:flex;"><div style="width:76%; background:linear-gradient(90deg, #D93829, #E8A825); border-radius:12px;"></div></div><p class="m" style="width:140px; font-size:48px; font-weight:700; color:#111318; white-space:nowrap;">76%</p></div>
+<div style="display:flex; align-items:center; gap:24px;"><p style="width:330px; font-size:26px; color:#6B6F78;">rappel : variante mini, 10× plus de calcul</p><div style="width:480px; height:52px; background:#E3DDD0; border-radius:12px; display:flex;"><div style="width:8%; background:#9A9488; border-radius:12px;"></div></div><p class="m" style="width:140px; font-size:48px; font-weight:700; color:#6B6F78; white-space:nowrap;">8%</p></div>
+</div>
+<div class="in" style="--i:2; flex:1; background:#FBF9F4; border:2px solid #DDD6C8; border-radius:20px; padding:30px 34px; display:flex; flex-direction:column; gap:14px;">
+<p class="mk">LE BUG QUI BRIDAIT TOUT</p>
+<h3 style="font-size:34px;">Sans règle de répétition, l’agent tournait en rond</h3>
+<p class="txt" style="font-size:26px;">Nos copies d’échiquier oubliaient l’historique : en self-play, répéter une position ne coûtait rien.</p>
+<div style="flex:1;"></div>
+<div style="display:flex; align-items:baseline; gap:18px;"><p class="m" style="font-size:56px; font-weight:700; color:#6B6F78; white-space:nowrap;">67%</p><p class="m" style="font-size:40px; color:#111318;">→</p><p class="m" style="font-size:56px; font-weight:700; color:#B32A1C; white-space:nowrap;">90%</p></div>
+<p class="txt" style="font-size:24px;">contre le MCTS pur, avant et après correction</p>
+</div>
+</div>
+<p class="foot">Évaluation locale · 40 parties par duel · couleurs alternées</p>
+<aside>≈ 1 min 15. Pour répondre à la question « pourquoi pas les vrais échecs ? », on a réentraîné sur la partie complète, sur Modal : 64 cœurs CPU jouent le self-play en parallèle, un GPU entraîne le réseau, soit 768 parties toutes les 4 minutes et 24 576 au total, pour 13 dollars de calcul. Résultat : à simulations égales, notre agent bat le MCTS pur à 90 %, et encore à 76 % quand le MCTS a dix fois plus de calcul ; sur la variante mini, on n’avait que 8 % dans ce cas. À droite, une leçon : un bug de règle. Nos copies d’échiquier oubliaient l’historique, donc en self-play répéter une position ne coûtait rien et l’agent tournait en rond. Une fois la triple répétition prise en compte, on est passé de 67 % à 90 %. Limite honnête : l’agent gagne vite du matériel, mais sait encore mal mater.</aside>
+</section>

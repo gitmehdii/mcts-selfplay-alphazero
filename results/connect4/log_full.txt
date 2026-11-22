@@ -1,0 +1,57 @@
+E1 : MCTS(n) contre Random / Heuristic
+   MCTS(sims=1,c=1.41421,random) vs Random : 104V / 0N / 96D sur 200 parties | score 52.0% [IC95 45.1%-58.8%] | Elo +14 | 3.8s
+   MCTS(sims=1,c=1.41421,random) vs Heuristic : 9V / 0N / 191D sur 200 parties | score 4.5% [IC95 2.4%-8.3%] | Elo -531 | 3.0s
+   MCTS(sims=5,c=1.41421,random) vs Random : 106V / 1N / 93D sur 200 parties | score 53.2% [IC95 46.3%-60.0%] | Elo +23 | 3.0s
+   MCTS(sims=5,c=1.41421,random) vs Heuristic : 10V / 2N / 188D sur 200 parties | score 5.5% [IC95 3.1%-9.6%] | Elo -494 | 4.8s
+   MCTS(sims=10,c=1.41421,random) vs Random : 162V / 1N / 37D sur 200 parties | score 81.2% [IC95 75.3%-86.1%] | Elo +255 | 4.0s
+   MCTS(sims=10,c=1.41421,random) vs Heuristic : 24V / 3N / 173D sur 200 parties | score 12.8% [IC95 8.8%-18.1%] | Elo -334 | 3.8s
+   MCTS(sims=25,c=1.41421,random) vs Random : 188V / 0N / 12D sur 200 parties | score 94.0% [IC95 89.8%-96.5%] | Elo +478 | 4.1s
+   MCTS(sims=25,c=1.41421,random) vs Heuristic : 101V / 1N / 98D sur 200 parties | score 50.7% [IC95 43.9%-57.6%] | Elo +5 | 4.2s
+   MCTS(sims=50,c=1.41421,random) vs Random : 197V / 0N / 3D sur 200 parties | score 98.5% [IC95 95.7%-99.5%] | Elo +727 | 4.1s
+   MCTS(sims=50,c=1.41421,random) vs Heuristic : 144V / 2N / 54D sur 200 parties | score 72.5% [IC95 65.9%-78.2%] | Elo +168 | 4.0s
+   MCTS(sims=100,c=1.41421,random) vs Random : 198V / 0N / 2D sur 200 parties | score 99.0% [IC95 96.4%-99.7%] | Elo +798 | 4.3s
+   MCTS(sims=100,c=1.41421,random) vs Heuristic : 179V / 4N / 17D sur 200 parties | score 90.5% [IC95 85.6%-93.8%] | Elo +392 | 4.9s
+   MCTS(sims=200,c=1.41421,random) vs Random : 200V / 0N / 0D sur 200 parties | score 100.0% [IC95 98.1%-100.0%] | Elo +1200 | 4.5s
+   MCTS(sims=200,c=1.41421,random) vs Heuristic : 198V / 0N / 2D sur 200 parties | score 99.0% [IC95 96.4%-99.7%] | Elo +798 | 5.0s
+   MCTS(sims=500,c=1.41421,random) vs Random : 200V / 0N / 0D sur 200 parties | score 100.0% [IC95 98.1%-100.0%] | Elo +1200 | 5.8s
+   MCTS(sims=500,c=1.41421,random) vs Heuristic : 199V / 0N / 1D sur 200 parties | score 99.5% [IC95 97.2%-99.9%] | Elo +920 | 7.1s
+   MCTS(sims=1000,c=1.41421,random) vs Random : 200V / 0N / 0D sur 200 parties | score 100.0% [IC95 98.1%-100.0%] | Elo +1200 | 8.8s
+   MCTS(sims=1000,c=1.41421,random) vs Heuristic : 200V / 0N / 0D sur 200 parties | score 100.0% [IC95 98.1%-100.0%] | Elo +1200 | 11.0s
+E2 : constante d'exploration c (300 sims) contre MCTS(c=sqrt 2, 300 sims)
+   MCTS(sims=300,c=0,random) vs MCTS(sims=300,c=1.41421,random) : 9V / 2N / 189D sur 200 parties | score 5.0% [IC95 2.7%-9.0%] | Elo -512 | 7.6s
+   MCTS(sims=300,c=0.1,random) vs MCTS(sims=300,c=1.41421,random) : 18V / 2N / 180D sur 200 parties | score 9.5% [IC95 6.2%-14.4%] | Elo -392 | 8.6s
+   MCTS(sims=300,c=0.25,random) vs MCTS(sims=300,c=1.41421,random) : 46V / 5N / 149D sur 200 parties | score 24.2% [IC95 18.8%-30.6%] | Elo -198 | 9.1s
+   MCTS(sims=300,c=0.5,random) vs MCTS(sims=300,c=1.41421,random) : 66V / 15N / 119D sur 200 parties | score 36.8% [IC95 30.4%-43.6%] | Elo -94 | 10.3s
+   MCTS(sims=300,c=1,random) vs MCTS(sims=300,c=1.41421,random) : 101V / 6N / 93D sur 200 parties | score 52.0% [IC95 45.1%-58.8%] | Elo +14 | 10.0s
+   MCTS(sims=300,c=1.41421,random) vs MCTS(sims=300,c=1.41421,random) : 87V / 8N / 105D sur 200 parties | score 45.5% [IC95 38.7%-52.4%] | Elo -31 | 9.7s
+   MCTS(sims=300,c=2,random) vs MCTS(sims=300,c=1.41421,random) : 93V / 12N / 95D sur 200 parties | score 49.5% [IC95 42.6%-56.4%] | Elo -3 | 10.4s
+   MCTS(sims=300,c=3,random) vs MCTS(sims=300,c=1.41421,random) : 91V / 5N / 104D sur 200 parties | score 46.8% [IC95 40.0%-53.7%] | Elo -23 | 10.6s
+   MCTS(sims=300,c=5,random) vs MCTS(sims=300,c=1.41421,random) : 86V / 10N / 104D sur 200 parties | score 45.5% [IC95 38.7%-52.4%] | Elo -31 | 10.4s
+E3 : MCTS(n) contre MCTS(1000)
+   MCTS(sims=50,c=1.41421,random) vs MCTS(sims=1000,c=1.41421,random) : 6V / 0N / 194D sur 200 parties | score 3.0% [IC95 1.4%-6.4%] | Elo -604 | 12.0s
+   MCTS(sims=100,c=1.41421,random) vs MCTS(sims=1000,c=1.41421,random) : 20V / 1N / 179D sur 200 parties | score 10.2% [IC95 6.8%-15.2%] | Elo -377 | 13.6s
+   MCTS(sims=250,c=1.41421,random) vs MCTS(sims=1000,c=1.41421,random) : 40V / 6N / 154D sur 200 parties | score 21.5% [IC95 16.4%-27.7%] | Elo -225 | 16.7s
+   MCTS(sims=500,c=1.41421,random) vs MCTS(sims=1000,c=1.41421,random) : 64V / 8N / 128D sur 200 parties | score 34.0% [IC95 27.8%-40.8%] | Elo -115 | 21.7s
+   MCTS(sims=1000,c=1.41421,random) vs MCTS(sims=1000,c=1.41421,random) : 96V / 15N / 89D sur 200 parties | score 51.7% [IC95 44.9%-58.6%] | Elo +12 | 25.9s
+   MCTS(sims=2000,c=1.41421,random) vs MCTS(sims=1000,c=1.41421,random) : 120V / 8N / 72D sur 200 parties | score 62.0% [IC95 55.1%-68.4%] | Elo +85 | 36.3s
+   MCTS(sims=4000,c=1.41421,random) vs MCTS(sims=1000,c=1.41421,random) : 71V / 5N / 24D sur 100 parties | score 73.5% [IC95 64.1%-81.2%] | Elo +177 | 30.0s
+   MCTS(sims=8000,c=1.41421,random) vs MCTS(sims=1000,c=1.41421,random) : 80V / 4N / 16D sur 100 parties | score 82.0% [IC95 73.3%-88.3%] | Elo +263 | 51.7s
+E4 : rollouts heuristiques vs aléatoires
+   MCTS(sims=100,c=1.41421,heuristic) vs MCTS(sims=100,c=1.41421,random) : 127V / 5N / 68D sur 200 parties | score 64.8% [IC95 57.9%-71.0%] | Elo +106 | 7.4s
+   MCTS(sims=500,c=1.41421,heuristic) vs MCTS(sims=500,c=1.41421,random) : 136V / 13N / 51D sur 200 parties | score 71.2% [IC95 64.6%-77.1%] | Elo +158 | 22.2s
+   MCTS(sims=2000,c=1.41421,heuristic) vs MCTS(sims=2000,c=1.41421,random) : 125V / 12N / 63D sur 200 parties | score 65.5% [IC95 58.7%-71.7%] | Elo +111 | 74.6s
+   MCTS(sims=1000,c=1.41421,heuristic) vs MCTS(sims=1000,c=1.41421,random) : 105V / 10N / 85D sur 200 parties | score 55.0% [IC95 48.1%-61.7%] | Elo +35 | 26.1s
+   MCTS(sims=1000,c=1.41421,heuristic) vs MCTS(sims=1000,c=1.41421,random) : 104V / 10N / 86D sur 200 parties | score 54.5% [IC95 47.6%-61.3%] | Elo +31 | 93.6s
+E5 : avantage du premier joueur (MCTS contre lui-même)
+   sims=100: le premier joueur gagne 121/200 parties, 6 nuls
+   sims=1000: le premier joueur gagne 107/200 parties, 10 nuls
+   sims=4000: le premier joueur gagne 111/200 parties, 12 nuls
+E6 : temps de calcul par coup (position initiale)
+   100 sims, rollout random: 0.004s/coup (25,973 sims/s)
+   100 sims, rollout heuristic: 0.015s/coup (6,885 sims/s)
+   1000 sims, rollout random: 0.038s/coup (26,090 sims/s)
+   1000 sims, rollout heuristic: 0.150s/coup (6,657 sims/s)
+   10000 sims, rollout random: 0.400s/coup (24,997 sims/s)
+   10000 sims, rollout heuristic: 1.302s/coup (7,678 sims/s)
+
+Résultats écrits dans /home/mehdi_ubuntu/EPITA/rl/results/connect4

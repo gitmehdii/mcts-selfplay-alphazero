@@ -1,0 +1,88 @@
+/* ================================================================
+   CLAIR-OBSCUR TACTIQUE — du plateau à l’échiquier
+   Ivoire #F4F1EA · Encre #111318 · Rouge jeton #D93829 · Or #E8A825 · Obsidienne #0E1015
+   Titres : Space Grotesk Bold (-0.03em) · Corps : Inter · Chiffres et code : JetBrains Mono
+   ================================================================ */
+body { font-family: 'Inter', Arial, sans-serif; color: #111318; }
+
+section { counter-increment: page; box-sizing: border-box; display: flex; flex-direction: column; }
+section.co { background: #F4F1EA; color: #111318; padding: 128px 128px 150px; }
+section.co.obs { background: #0E1015; color: #A7ABB3; }
+
+section.co h1, section.co h2, section.co h3 { font-family: 'Space Grotesk', Arial, sans-serif; color: #111318; font-weight: 700; letter-spacing: -0.03em; margin: 0; }
+section.co.obs h1, section.co.obs h2, section.co.obs h3 { color: #F4F1EA; }
+section.co h1 { font-size: 160px; line-height: 0.95; }
+section.co h2 { font-size: 80px; line-height: 1.02; }
+section.co h3 { font-size: 36px; line-height: 1.12; }
+section.co p { font-family: 'Inter', Arial, sans-serif; margin: 0; font-size: 30px; line-height: 1.38; }
+section.co .m { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+
+/* textes courants */
+section.co .txt { font-size: 28px; line-height: 1.4; color: #4A4E57; }
+section.co.obs .txt { color: #A7ABB3; }
+section.co .mk { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 24px; letter-spacing: 2px; color: #B32A1C; }
+section.co.obs .mk { color: #E8A825; }
+section.co .big { font-family: 'JetBrains Mono', 'Courier New', monospace; font-weight: 700; line-height: 1; letter-spacing: -0.04em; color: #111318; white-space: nowrap; }
+section.co.obs .big { color: #F4F1EA; }
+
+/* fil d’Ariane façon notation de partie + progression en cases */
+.crumb { position: absolute; left: 128px; top: 52px; width: 1664px; display: flex; justify-content: space-between; align-items: center; }
+section.co .crumb .t { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 24px; color: #4A4E57; letter-spacing: 1px; }
+.crumb .t b { color: #B32A1C; }
+section.co.obs .crumb .t { color: #A7ABB3; }
+.obs .crumb .t b { color: #E8A825; }
+.prog { display: flex; gap: 6px; }
+.prog .q { width: 18px; height: 18px; border: 2px solid #C9C2B4; box-sizing: border-box; }
+.prog .q.d { background: #111318; border-color: #111318; }
+.prog .q.c { background: #D93829; border-color: #D93829; }
+.obs .prog .q { border-color: #2E3340; }
+.obs .prog .q.d { background: #F4F1EA; border-color: #F4F1EA; }
+.obs .prog .q.c { background: #E8A825; border-color: #E8A825; }
+section.co .foot { position: absolute; left: 128px; bottom: 56px; width: 1664px; font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 24px; color: #4A4E57; }
+section.co.obs .foot { color: #A7ABB3; }
+section.co .ranks { position: absolute; left: 50px; top: 150px; width: 32px; font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 24px; line-height: 96px; color: #5C6270; text-align: center; }
+
+/* graphiques */
+.chart { position: relative; width: 1000px; height: 600px; }
+section.co .chart .ax { position: absolute; font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 24px; color: #4A4E57; white-space: nowrap; }
+section.co.obs .chart .ax { color: #A7ABB3; }
+section.co .chart .lab { position: absolute; font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 26px; font-weight: 700; white-space: nowrap; }
+.lab.red { color: #B32A1C; }
+.lab.ink { color: #111318; }
+.lab.gold { color: #E8A825; }
+.lab.ivory { color: #F4F1EA; }
+
+/* mises en page */
+.row { display: flex; gap: 40px; }
+
+/* panneaux clairs */
+.panel { background: #FBF9F4; border: 2px solid #DDD6C8; border-radius: 20px; padding: 28px 32px; display: flex; flex-direction: column; gap: 12px; }
+
+/* bloc terminal / éditeur */
+.term { background: #0E1015; border-radius: 18px; padding: 26px 34px; display: flex; flex-direction: column; gap: 10px; }
+section.co .term p { font-family: 'JetBrains Mono', 'Courier New', monospace; color: #F4F1EA; white-space: nowrap; }
+
+/* cartes « horloge d’échecs » */
+.clock { background: #0E1015; border-radius: 22px; padding: 30px 36px; display: flex; flex-direction: column; gap: 12px; }
+.clock .top { display: flex; align-items: center; gap: 18px; }
+.clock .btn { width: 64px; height: 14px; border-radius: 7px; background: #3A3F4B; }
+.clock .btn.on { background: #E8A825; }
+section.co .clock .k { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 24px; color: #A7ABB3; letter-spacing: 2px; }
+section.co .clock .v { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 96px; font-weight: 700; line-height: 1; color: #F4F1EA; letter-spacing: -3px; white-space: nowrap; }
+section.co .clock .s { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 24px; color: #E8A825; }
+
+/* tuiles bento (fond obsidienne) */
+.tile { background: #161922; border: 2px solid #262A35; border-radius: 22px; padding: 26px 30px; display: flex; flex-direction: column; gap: 8px; }
+section.co .tile .k { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 24px; color: #A7ABB3; letter-spacing: 2px; }
+section.co .tile .v { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 76px; font-weight: 700; line-height: 1; color: #F4F1EA; letter-spacing: -2px; white-space: nowrap; }
+section.co .tile .s { font-size: 24px; color: #A7ABB3; }
+
+/* badges monospace */
+section.co .badge { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 30px; color: #F4F1EA; border: 2px solid #2E3340; border-radius: 14px; padding: 16px 26px; white-space: nowrap; }
+.badge b { color: #E8A825; }
+
+/* animations d’arrivée */
+@keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.in { animation: rise 560ms cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 120ms); }
+.fadein { animation: fade 640ms ease-out both; animation-delay: calc(var(--i, 0) * 120ms); }

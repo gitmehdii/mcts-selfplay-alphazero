@@ -1,0 +1,47 @@
+<section id="sims" class="co">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s5-holes" width="96" height="96" patternUnits="userSpaceOnUse"><circle cx="48" cy="48" r="30" fill="none" stroke="#111318" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s5-holes)" opacity="0.05"/>
+</svg>
+<div class="crumb"><p class="t"><b>05.</b> MCTS pur · budget de simulations</p><div class="prog"><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q c"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div></div></div>
+<h2>50 simulations battent le hasard</h2>
+<div class="row" style="margin-top:48px; gap:64px; align-items:center;">
+<div class="chart fadein">
+<svg aria-label="Score du MCTS selon le nombre de simulations par coup, contre l’aléatoire et contre l’heuristique" width="900" height="520" viewBox="0 0 900 520" style="position:absolute; left:80px; top:0;">
+<defs>
+<linearGradient id="s5-ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D93829" stop-opacity="0.13"/><stop offset="1" stop-color="#D93829" stop-opacity="0"/></linearGradient>
+<linearGradient id="s5-ai" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111318" stop-opacity="0.06"/><stop offset="1" stop-color="#111318" stop-opacity="0"/></linearGradient>
+</defs>
+<g stroke="#D3CCBE" stroke-width="1.5"><line x1="0" y1="10" x2="900" y2="10"/><line x1="0" y1="135" x2="900" y2="135"/><line x1="0" y1="385" x2="900" y2="385"/><line x1="0" y1="510" x2="900" y2="510"/><line x1="300" y1="10" x2="300" y2="510"/><line x1="600" y1="10" x2="600" y2="510"/></g>
+<line x1="0" y1="260" x2="900" y2="260" stroke="#9C9384" stroke-width="2" stroke-dasharray="8 8"/>
+<polygon fill="url(#s5-ar)" points="0,250 209.7,243.75 300,103.75 419.4,40 509.7,17.5 600,15 690.3,10 809.7,10 900,10 900,510 0,510"/>
+<polygon fill="url(#s5-ai)" points="0,487.5 209.7,482.5 300,446.25 419.4,256.25 509.7,147.5 600,57.5 690.3,15 809.7,12.5 900,10 900,510 0,510"/>
+<polyline fill="none" stroke="#111318" stroke-width="5" stroke-linejoin="round" points="0,487.5 209.7,482.5 300,446.25 419.4,256.25 509.7,147.5 600,57.5 690.3,15 809.7,12.5 900,10"/>
+<polyline fill="none" stroke="#D93829" stroke-width="6" stroke-linejoin="round" points="0,250 209.7,243.75 300,103.75 419.4,40 509.7,17.5 600,15 690.3,10 809.7,10 900,10"/>
+<g fill="#F4F1EA" stroke="#111318" stroke-width="4"><circle cx="0" cy="487.5" r="8"/><circle cx="209.7" cy="482.5" r="8"/><circle cx="300" cy="446.25" r="8"/><circle cx="509.7" cy="147.5" r="8"/><circle cx="600" cy="57.5" r="8"/></g>
+<circle cx="419.4" cy="256.25" r="12" fill="#111318"/>
+<g fill="#F4F1EA" stroke="#D93829" stroke-width="4"><circle cx="0" cy="250" r="8"/><circle cx="209.7" cy="243.75" r="8"/><circle cx="300" cy="103.75" r="8"/><circle cx="419.4" cy="40" r="8"/></g>
+<circle cx="509.7" cy="17.5" r="16" fill="#D93829" opacity="0.25"/>
+<circle cx="509.7" cy="17.5" r="10" fill="#D93829"/>
+</svg>
+<p class="ax" style="left:0; top:-6px; width:66px; text-align:right;">100%</p>
+<p class="ax" style="left:0; top:244px; width:66px; text-align:right;">50%</p>
+<p class="ax" style="left:0; top:494px; width:66px; text-align:right;">0%</p>
+<p class="ax" style="left:50px; top:534px; width:60px; text-align:center;">1</p>
+<p class="ax" style="left:350px; top:534px; width:60px; text-align:center;">10</p>
+<p class="ax" style="left:650px; top:534px; width:60px; text-align:center;">100</p>
+<p class="ax" style="left:920px; top:534px; width:80px; text-align:right;">1000</p>
+<p class="ax" style="left:230px; top:570px; width:600px; text-align:center;">simulations par coup · échelle log</p>
+<p class="lab red" style="left:96px; top:196px; width:300px;">vs aléatoire</p>
+<p class="lab ink" style="left:96px; top:398px; width:300px;">vs heuristique</p>
+<p class="lab ink" style="left:520px; top:268px; width:360px;">← 25 sims : égalité</p>
+<p class="lab" style="left:614px; top:30px; width:56px; text-align:center; background:#D93829; color:#F4F1EA; border-radius:8px; line-height:1.3;">50</p>
+</div>
+<div style="width:600px; display:flex; flex-direction:column; gap:24px;">
+<div class="clock in" style="--i:1;"><div class="top"><div class="btn on"></div><p class="k">VS ALÉATOIRE</p></div><p class="v">98,5%</p><p class="s">avec 50 simulations · 2 ms/coup</p></div>
+<div class="clock in" style="--i:2;"><div class="top"><div class="btn"></div><p class="k">VS HEURISTIQUE</p></div><p class="v">200</p><p class="s">simulations pour la dominer · 99%</p></div>
+</div>
+</div>
+<p class="foot">200 parties par point · couleurs alternées</p>
+<aside>≈ 1 min. Premier résultat : la force selon le budget de calcul. En rouge, contre un joueur aléatoire : avec une seule simulation, on joue au hasard, 52 %. À 50 simulations, 98,5 %, pour 2 millisecondes par coup. En noir, un adversaire plus coriace qui gagne s’il peut et bloque sinon : il faut 25 simulations pour l’égaler et 200 pour le dominer. Chaque point, c’est 200 parties avec couleurs alternées.</aside>
+</section>

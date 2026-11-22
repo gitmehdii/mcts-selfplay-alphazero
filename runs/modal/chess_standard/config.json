@@ -1,0 +1,15 @@
+{
+  "game": "chess:standard",
+  "sims": 64,
+  "temp_moves": 30,
+  "alpha": 0.3,
+  "budget": 25.0,
+  "workers": 64,
+  "games_per_worker": 12,
+  "steps": 400,
+  "batch": 1024,
+  "lr": 0.002,
+  "buffer": 300000,
+  "channels": 64,
+  "blocks": 5
+}

@@ -1,0 +1,13 @@
+adversaire,parties,score
+random,3840,0.938
+random,7680,0.812
+random,11520,0.781
+random,15360,0.719
+random,19200,0.938
+random,23040,0.891
+mcts,3840,0.672
+mcts,7680,0.672
+mcts,11520,0.734
+mcts,15360,0.672
+mcts,19200,0.922
+mcts,23040,0.766

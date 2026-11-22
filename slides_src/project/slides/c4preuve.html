@@ -1,0 +1,34 @@
+<section id="c4preuve" class="co">
+<svg aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0; top:0;">
+<defs><pattern id="s12-grid" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="120" height="120" fill="none" stroke="#111318" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="1920" height="1080" fill="url(#s12-grid)" opacity="0.05"/>
+</svg>
+<p class="ranks" style="color:#B9B2A4;">8<br>7<br>6<br>5<br>4<br>3<br>2<br>1</p>
+<div class="crumb"><p class="t"><b>12.</b> Puissance 4 · expérience de contrôle</p><div class="prog"><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q d"></div><div class="q c"></div><div class="q"></div><div class="q"></div><div class="q"></div><div class="q"></div></div></div>
+<h2>Le gain vient de l’apprentissage</h2>
+<p class="txt" style="margin-top:18px; font-size:30px;">Score contre le MCTS pur (100 simulations). Même code, même recherche : seul le réseau change.</p>
+<div style="margin-top:52px; display:flex; flex-direction:column; gap:36px;">
+<div class="in" style="--i:0; display:flex; align-items:center; gap:32px;">
+<div style="width:440px;"><p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:700; letter-spacing:-0.03em; color:#6B6F78;">Réseau non entraîné</p><p class="m" style="font-size:24px; color:#6B6F78;">+ recherche PUCT</p></div>
+<div style="width:900px; height:56px; background:#E3DDD0; border-radius:12px; display:flex;"><div style="width:9%; background:#9A9488; border-radius:12px;"></div></div>
+<p class="m" style="width:260px; font-size:56px; font-weight:700; color:#6B6F78; white-space:nowrap;">9%</p>
+</div>
+<div class="in" style="--i:1; display:flex; align-items:center; gap:32px;">
+<div style="width:440px;"><p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:700; letter-spacing:-0.03em; color:#111318;">Réseau entraîné</p><p class="m" style="font-size:24px; color:#B32A1C;">+ recherche PUCT</p></div>
+<div style="width:900px; height:100px; background:#E3DDD0; border-radius:14px; display:flex;"><div style="width:97%; background:linear-gradient(90deg, #D93829, #E8A825); border-radius:14px;"></div></div>
+<p class="m" style="width:260px; font-size:96px; font-weight:700; line-height:1; letter-spacing:-0.04em; color:#B32A1C; white-space:nowrap;">97%</p>
+</div>
+<div class="in" style="--i:2; display:flex; align-items:center; gap:32px;">
+<div style="width:440px;"><p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:700; letter-spacing:-0.03em; color:#111318;">Réseau entraîné seul</p><p class="m" style="font-size:24px; color:#4A4E57;">sans aucune recherche</p></div>
+<div style="width:900px; height:56px; background:#E3DDD0; border-radius:12px; display:flex;"><div style="width:84.5%; background:#111318; border-radius:12px;"></div></div>
+<p class="m" style="width:260px; font-size:56px; font-weight:700; color:#111318; white-space:nowrap;">84,5%</p>
+</div>
+</div>
+<div style="flex:1;"></div>
+<div class="in" style="--i:3; background:#111318; border-radius:18px; padding:22px 36px; display:flex; align-items:center; gap:28px;">
+<p class="m" style="font-size:44px; font-weight:700; color:#E8A825; white-space:nowrap;">+88 pts</p>
+<p style="font-size:28px; color:#F4F1EA;">grâce au seul self-play · et le réseau seul bat 100 rollouts par coup</p>
+</div>
+<p class="foot">100 parties par barre · couleurs alternées</p>
+<aside>≈ 1 min. Une question qu’on nous pose souvent : est-ce la recherche PUCT qui fait la différence, ou l’apprentissage ? Voici l’expérience de contrôle. Même code, même recherche, on change seulement le réseau. Avec un réseau non entraîné : 9 %, il perd presque tout. Avec le réseau entraîné : 97 %, soit 88 points de plus grâce au seul self-play. Et le réseau seul, sans aucune recherche, un seul passage par coup, bat encore le MCTS pur à 84,5 %. C’est donc bien le self-play qui a appris quelque chose sur le jeu.</aside>
+</section>
